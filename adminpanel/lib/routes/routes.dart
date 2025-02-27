@@ -7,7 +7,7 @@ class Routes {
   static const String dashBoard = '/dashboard';
   static const String event = '/event';
 
-  //ohter screens
+  //other screens
   static const String maintenance = '/maintenance';
   static const String error_404 = '/404';
 }
