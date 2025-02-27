@@ -1,4 +1,4 @@
-import 'package:adminpanel/constants/colors.dart';
+import 'package:adminpanel/core/constants/colors.dart';
 import 'package:flutter/material.dart';
 class DElevatedButtons {
   
