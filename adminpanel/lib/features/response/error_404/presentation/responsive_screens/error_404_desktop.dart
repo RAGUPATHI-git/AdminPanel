@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class Error404Desktop extends StatelessWidget {
   const Error404Desktop({super.key});
@@ -6,7 +7,9 @@ class Error404Desktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text("error 404")),
+      body: Center(
+        child: Lottie.asset('assets/animations/error404.json')
+      ),
     );
   }
 }
