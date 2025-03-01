@@ -13,6 +13,16 @@ packages:
     dependency: transitive
     description:
       name: archive
+
+      sha256: "528579c7e4579719f04b21eeeeddfd73a18b31dabc22766893b7d1be7f49b967"
+      url: "https://pub.dev"
+    source: hosted
+
+      sha256: "0c64e928dcbefddecd234205422bcfc2b5e6d31be0b86fef0d0dd48d7b4c9742"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.0.4"
+
       sha256: cb6a278ef2dbb298455e1a713bda08524a175630ec643a242c399c932a0a1f7d
       url: "https://pub.dev"
     source: hosted
