@@ -1,25 +1,14 @@
-import 'package:adminpanel/features/response/error_404/presentation/error_404_screen.dart';
-import 'package:adminpanel/features/response/maintenance/presentation/maintenance_screen.dart';
-import 'package:adminpanel/routes/routers.dart';
-import 'package:flutter/material.dart';
-
-
+import 'package:adminpanel/features/response/error_404/presentation/responsive_screens/error_404_desktop.dart';
+import 'package:adminpanel/features/response/maintenance/presentation/responsive_screens/maintenance_desktop.dart';
+import 'package:adminpanel/routes/routes.dart';
+import 'package:get/get_navigation/src/routes/get_route.dart';
 
 class AppRouting {
-  Route onRouteGenerator(RouteSettings route) {
-    switch (route.name) {
-      case '/':
-        return MaterialPageRoute(builder: (context) => const   MaintenanceScreen());
-     case Routes.maintenance:
-        return MaterialPageRoute(builder: (context) => const  MaintenanceScreen());
 
-      case Routes.error_404:
-      return MaterialPageRoute(builder: (context) => const Error404Screen());
+final  List<GetPage> pages  = [
 
-      default:
-        return MaterialPageRoute(builder: (conext) => const MaintenanceScreen());
+  GetPage(name: Routes.error_404, page: () => const Error404Desktop()),
+  GetPage(name: Routes.maintenance, page: () => const MaintenanceDesktop()),
+];
 
-
-    }
-  }
 }
