@@ -9,11 +9,11 @@ class MaintenanceScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const  SiteLayout(
+    return const SiteLayout(
       desktop: MaintenanceDesktop(),
       tablet: MaintenanceTablet(),
       mobile: MaintenanceMobile(),
-      useLayout: true,
+      useLayout: false,
     );
   }
 }
