@@ -1,4 +1,7 @@
 import 'package:adminpanel/common/widgets/responsive%20container/responsive_container.dart';
+import 'package:adminpanel/common/widgets/screens/desktop_layout.dart';
+import 'package:adminpanel/common/widgets/screens/mobile_layout.dart';
+import 'package:adminpanel/common/widgets/screens/tablet_layout.dart';
 import 'package:flutter/material.dart';
 
 class SiteLayout extends StatelessWidget {
@@ -7,7 +10,7 @@ class SiteLayout extends StatelessWidget {
       this.desktop,
       this.tablet,
       this.mobile,
-      this.useLayout = true});
+      this.useLayout = false});
 
   final Widget? desktop;
   final Widget? tablet;
@@ -19,9 +22,13 @@ class SiteLayout extends StatelessWidget {
     return Scaffold(
         body: Responsivecontainer(
       desktop:
-          useLayout ? desktop ?? Container() : Container(),
-      tablet: useLayout ? tablet ?? Container() : Container(),
-      mobile: useLayout ? mobile ?? Container() : Container(),
+          useLayout ? DesktopLayout(body: desktop) : desktop ?? Container(),
+      tablet: useLayout
+          ? TabletLayout(body: tablet ?? desktop)
+          : tablet ?? desktop ?? Container(),
+      mobile: useLayout
+          ? MobileLayout(body: mobile ?? desktop)
+          : mobile ?? desktop ?? Container(),
     ));
   }
 }

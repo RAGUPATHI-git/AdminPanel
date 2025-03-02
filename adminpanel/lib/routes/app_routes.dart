@@ -4,10 +4,9 @@ import 'package:adminpanel/routes/routes.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 class AppRouting {
-
   final List<GetPage> pages = [
     GetPage(name: Routes.error_404, page: () => const Error404Desktop()),
     GetPage(name: Routes.maintenance, page: () => const MaintenanceScreen()),
   ];
-  
+
 }

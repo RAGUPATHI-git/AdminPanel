@@ -1,4 +1,4 @@
-import 'package:adminpanel/features/response/error_404/presentation/responsive_screens/error_404_desktop.dart';
+import 'package:adminpanel/features/response/error_404/presentation/error_404_screen.dart';
 import 'package:adminpanel/routes/app_routes.dart';
 import 'package:adminpanel/routes/routes.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +16,6 @@ class App extends StatelessWidget {
         // initialBinding: GeneralBindings(),
         // initialRoute: Routes.dashBoard,
         unknownRoute: GetPage(
-            name: Routes.error_404, page: () => const Error404Desktop()));
+            name: Routes.error_404, page: () => const Error404Screen()));
   }
 }
