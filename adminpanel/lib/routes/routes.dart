@@ -10,4 +10,7 @@ class Routes {
   //ohter screens
   static const String maintenance = '/maintenance';
   static const String error_404 = '/404';
+
+  //test screens
+  static const String test = '/test';
 }
