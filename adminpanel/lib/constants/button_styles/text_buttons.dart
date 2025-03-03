@@ -10,7 +10,12 @@ class DTextButtons{
 
   static ButtonStyle standardtextButton = TextButton.styleFrom(
     padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
-    textStyle: const TextStyle(fontFamily:'', fontSize:18, color: DColors.standardlightblack),
+    textStyle: const TextStyle(fontFamily:'', fontSize:18, color: DColors.standardblack),
+  );
+
+  static ButtonStyle darktextButton = TextButton.styleFrom(
+    padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
+    textStyle: const TextStyle(fontFamily:'', fontSize:18, color: DColors.standardgrey),
   );
 
   static ButtonStyle dangertextButton = TextButton.styleFrom(

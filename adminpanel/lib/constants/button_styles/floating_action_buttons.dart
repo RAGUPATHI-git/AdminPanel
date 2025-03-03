@@ -4,8 +4,8 @@ import '../colors.dart';
 class DFloatingActionButtons {
 
     static FloatingActionButtonThemeData customfloatingActionButton = FloatingActionButtonThemeData(
-    backgroundColor: DColors.standardlightwhite, // Background color
-    foregroundColor: DColors.custom, // Icon color
+    backgroundColor: DColors.custom, // Background color
+    foregroundColor: DColors.standardlightgrey, // Icon color
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(10.0),
     ));

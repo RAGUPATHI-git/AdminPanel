@@ -6,7 +6,7 @@ class DOutlinedButtons {
   static ButtonStyle customoutlinedButton = OutlinedButton.styleFrom(
     side: const BorderSide(color: DColors.custom), // Border color
     padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
-    textStyle:const TextStyle(fontSize: 18,  ),
+    textStyle:const TextStyle(fontSize: 18,color: DColors.standardlightgrey  ),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(10.0),
     ),
@@ -15,7 +15,7 @@ class DOutlinedButtons {
   static ButtonStyle standardoutlinedButton = OutlinedButton.styleFrom(
     side: const BorderSide(color: DColors.standardblack), // Border color
     padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
-    textStyle:const TextStyle(fontSize: 18,  ),
+    textStyle:const TextStyle(fontSize: 18,color: DColors.standardblack ),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(10.0),
     ),
@@ -24,7 +24,7 @@ class DOutlinedButtons {
   static ButtonStyle dangeroutlinedButton = OutlinedButton.styleFrom(
     side: const BorderSide(color: DColors.danger), // Border color
     padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
-    textStyle: const TextStyle(fontSize: 18,  ),
+    textStyle: const TextStyle(fontSize: 18, color:DColors.danger  ),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(10.0),
     ),
