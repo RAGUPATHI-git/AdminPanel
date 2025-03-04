@@ -11,7 +11,7 @@ class MaintenanceMobile extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Lottie.asset(DAnimations.maintenance, height: 200),
+        Lottie.asset(DAnimations.maintenance, height: 400),
         const SizedBox(height: 10),
      const   Text(Dtext.maintenanceTitle,
             style:  TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),

@@ -12,7 +12,7 @@ class MaintenanceDesktop extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Lottie.asset(DAnimations.maintenance, height: 300),
+          Lottie.asset(DAnimations.maintenance, height: 400),
           const SizedBox(height: 20),
           const Text(Dtext.maintenanceTitle,
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
