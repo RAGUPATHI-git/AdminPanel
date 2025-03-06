@@ -1,6 +1,16 @@
 import 'package:adminpanel/core/constants/colors.dart';
 import 'package:flutter/material.dart';
 class DElevatedButtons {
+
+  static ButtonStyle loginelevatedButton = ElevatedButton.styleFrom(
+    backgroundColor: const Color(0x66808080) ,
+    foregroundColor: DColors.standardwhite,
+    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 80),
+    textStyle:const TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
+    shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(4),
+    ),
+  );
   
   static ButtonStyle customelevatedButton = ElevatedButton.styleFrom(
     elevation: 10,
