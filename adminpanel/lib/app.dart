@@ -16,13 +16,15 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => TestCubit(testUseCase: TestUseCase(reopository1: TestRepositoryImpl())))
+        BlocProvider(
+            create: (context) => TestCubit(
+                testUseCase: TestUseCase(reopository1: TestRepositoryImpl())))
       ],
       child: GetMaterialApp(
           debugShowCheckedModeBanner: false,
           getPages: AppRouting().pages,
           // initialBinding: GeneralBindings(),
-          initialRoute: Routes.test,
+          initialRoute: Routes.dashBoard,
           unknownRoute: GetPage(
               name: Routes.error_404, page: () => const Error404Screen())),
     );
