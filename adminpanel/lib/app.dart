@@ -16,7 +16,9 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => TestCubit(testUseCase: TestUseCase(reopository1: TestRepositoryImpl())))
+        BlocProvider(
+            create: (context) => TestCubit(
+                testUseCase: TestUseCase(reopository1: TestRepositoryImpl())))
       ],
       child: GetMaterialApp(
           debugShowCheckedModeBanner: false,

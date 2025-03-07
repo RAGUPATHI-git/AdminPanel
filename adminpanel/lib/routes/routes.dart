@@ -2,6 +2,7 @@ class Routes {
   //Authentication Routes
   static const String login = '/login';
   static const String forgorPassword = '/forgot-password';
+  static const String logout = '/logout';
 
   //General Screens
   static const String dashBoard = '/dashboard';

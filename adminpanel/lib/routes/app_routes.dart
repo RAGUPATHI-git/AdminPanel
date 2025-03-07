@@ -1,4 +1,3 @@
-
 import 'package:adminpanel/features/authentication/login/presentation/login_screen.dart';
 import 'package:adminpanel/features/response/error_404/presentation/error_404_screen.dart';
 import 'package:adminpanel/features/response/maintenance/presentation/maintenance_screen.dart';
@@ -12,6 +11,7 @@ class AppRouting {
     GetPage(name: Routes.maintenance, page: () => const MaintenanceScreen()),
     GetPage(name: Routes.test, page: () => const TestScreen()),
     GetPage(name: Routes.login, page: ()=> const LoginScreen()),
+   GetPage(name: Routes.dashBoard, page: () => const DashboardScreen()),
   ];
 
 }
