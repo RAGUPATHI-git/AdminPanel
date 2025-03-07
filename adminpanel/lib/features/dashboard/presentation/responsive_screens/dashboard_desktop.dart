@@ -1,8 +1,10 @@
 import 'package:adminpanel/core/constants/animations.dart';
 import 'package:adminpanel/core/constants/enums.dart';
 import 'package:adminpanel/core/constants/sizes.dart';
+import 'package:adminpanel/features/dashboard/presentation/bloc/chart_bloc.dart';
 import 'package:adminpanel/features/dashboard/presentation/widgets/cards.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
 
 class DashboardDesktop extends StatelessWidget {
@@ -120,21 +122,33 @@ class DashboardDesktop extends StatelessWidget {
   }
 
   Widget graph(BuildContext context) {
-    return const Column(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const SizedBox(
           height: DSizes.sm,
         ),
-        Padding(
+        const Padding(
           padding: EdgeInsets.all(16.0),
           child: Text("Activity"),
         ),
-        Divider(
+        const Divider(
           thickness: 1,
           endIndent: 10,
           indent: 10,
         ),
+        // BlocBuilder<ChartBloc, ChartState>(
+        //   builder: (context, state) {
+        //     if (state is ChartLoading) {
+        //       return Center(child: CircularProgressIndicator());
+        //     } else if (state is ChartLoaded) {
+        //       return ChartWidget(chartData: state.chartData);
+        //     } else if (state is ChartError) {
+        //       return Center(child: Text(state.message));
+        //     }
+        //     return Center(child: Text("Press the button to load data."));
+        //   },
+        // ),
       ],
     );
   }
