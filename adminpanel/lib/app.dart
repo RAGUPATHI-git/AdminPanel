@@ -24,7 +24,7 @@ class App extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           getPages: AppRouting().pages,
           // initialBinding: GeneralBindings(),
-          initialRoute: Routes.dashBoard,
+          initialRoute: Routes.login,
           unknownRoute: GetPage(
               name: Routes.error_404, page: () => const Error404Screen())),
     );
