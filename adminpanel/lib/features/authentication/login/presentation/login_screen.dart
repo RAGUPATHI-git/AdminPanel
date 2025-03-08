@@ -14,7 +14,7 @@ class LoginScreen extends StatelessWidget {
       desktop: LoginDesktop(),
       tablet: LoginTablet(),
       mobile: LoginMobile(),
-      useLayout: true,
+      useLayout: false,
     );
   }
 }

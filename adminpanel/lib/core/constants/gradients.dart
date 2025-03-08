@@ -4,15 +4,13 @@ class DGradients{
 
   static const LinearGradient sampleGradient = LinearGradient(
   colors: [
-    Color(0xFF008080), // Teal
-    Color(0xFF20B2AA), // Light Sea Green
-    Color(0xFF87CEEB), // Light Sky Blue
-    Color(0xFFB0E0E6), // Powder Blue
-    Color(0xFF4682B4), // Steel Blue
+    Color.fromARGB(255, 7, 101, 101), // Dark Teal
+    Color(0xFF87CEEB), // Sky Blue
+    Color.fromARGB(255, 117, 200, 227), // Light Blue
   ],
-  stops: [0.0, 0.25, 0.5, 0.75, 1.0], // Define where each color starts
-  begin: Alignment.bottomRight,
-  end: Alignment.topLeft,
+  stops: [0.0, 0.5, 1.0],
+  begin: Alignment.topLeft,
+  end: Alignment.bottomRight,
 );
   
 }

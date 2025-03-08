@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 class DElevatedButtons {
 
   static ButtonStyle loginelevatedButton = ElevatedButton.styleFrom(
-    backgroundColor: const Color(0x66808080) ,
+    backgroundColor: DColors.customlight,
     foregroundColor: DColors.standardwhite,
-    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 80),
+    padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 80),
     textStyle:const TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
     shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(4),
+    borderRadius: BorderRadius.circular(10),
     ),
   );
   

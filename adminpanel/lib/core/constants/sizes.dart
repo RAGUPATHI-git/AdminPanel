@@ -1,6 +1,4 @@
-class DSizes{
-
-
+class DSizes {
   //Sizes
   static const double xs = 4.0;
   static const double sm = 4.0;
@@ -53,7 +51,6 @@ class DSizes{
   //Responsive Screen Size
   static const int desktopScreenSize = 1366; //1366 old, 900
   static const int tabletScreenSize = 768; // 768 old
-  static const int mobileScreenSize = 420; // 360 old , new 420
+  static const int mobileScreenSize = 840; // 360 old , old 420, new 600
   static const int customScreenSize = 1100;
 }
-
