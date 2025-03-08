@@ -11,6 +11,7 @@ class LoginTablet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        
              width: 900,
             height: 900,
             child: Stack(

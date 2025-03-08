@@ -10,6 +10,9 @@ class LoginMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15)
+        ),
              width: 900,
             height: 900,
             child: Stack(
@@ -78,10 +81,6 @@ class LoginMobile extends StatelessWidget {
                   backgroundColor: DColors.customlight,
                  ),
                ),
-
-
-
-
                 Positioned(
                   left: 40,
                   bottom: 140,

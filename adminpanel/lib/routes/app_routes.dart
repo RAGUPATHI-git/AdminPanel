@@ -1,4 +1,5 @@
 import 'package:adminpanel/features/authentication/login/presentation/login_screen.dart';
+import 'package:adminpanel/features/dashboard/dashboard_screen.dart';
 import 'package:adminpanel/features/response/error_404/presentation/error_404_screen.dart';
 import 'package:adminpanel/features/response/maintenance/presentation/maintenance_screen.dart';
 import 'package:adminpanel/features/test/presentation/test_screen.dart';

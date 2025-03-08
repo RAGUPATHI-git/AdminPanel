@@ -1,3 +1,6 @@
+import 'package:adminpanel/features/dashboard/bussiness_logic/use%20cases/chart_usecase.dart';
+import 'package:adminpanel/features/dashboard/data/repositories/chart_repository_impl.dart';
+import 'package:adminpanel/features/dashboard/presentation/cubit/chart_cubit.dart';
 import 'package:adminpanel/features/response/error_404/presentation/error_404_screen.dart';
 import 'package:adminpanel/features/test/bussiness_logic/use%20cases/test_use_case.dart';
 import 'package:adminpanel/features/test/data/repositories/test_repository_impl.dart';
@@ -17,8 +20,10 @@ class App extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-            create: (context) => TestCubit(
-                testUseCase: TestUseCase(reopository1: TestRepositoryImpl())))
+            create: (_) => TestCubit(
+                testUseCase: TestUseCase(reopository1: TestRepositoryImpl()))),
+
+        BlocProvider(create: (_) => ChartCubit(usecase: ChartUsecase(ChartRepositoryImpl())))
       ],
       child: GetMaterialApp(
           debugShowCheckedModeBanner: false,
