@@ -13,7 +13,7 @@ class Error404Screen extends StatelessWidget {
       desktop: Error404Desktop(),
       tablet: Error404Tablet(),
       mobile: Error404Mobile(),
-      useLayout: true,
+      useLayout: false,
     );
   }
 }
