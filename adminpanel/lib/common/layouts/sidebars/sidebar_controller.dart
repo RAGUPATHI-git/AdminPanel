@@ -1,12 +1,21 @@
 import 'package:adminpanel/core/utils/device_utility.dart';
-import 'package:adminpanel/routes/routes.dart';
 import 'package:get/get.dart';
 
 class SidebarController extends GetxController {
   static SidebarController get instance => Get.find();
 
-  final activeItem = Routes.dashBoard.obs;
+  final activeItem = ''.obs; // Initially empty to prevent forcing 'dashboard'
   final hoverItem = ''.obs;
+
+  @override
+  void onInit() {
+    super.onInit();
+    activeItem.value =
+        Get.currentRoute; // Set initial active item based on the current route
+    ever(Get.currentRoute.obs, (route) {
+      activeItem.value = route; // Update when route changes
+    });
+  }
 
   void changeActiveItem(String route) => activeItem.value = route;
 

@@ -26,6 +26,7 @@ class App extends StatelessWidget {
         BlocProvider(create: (_) => ChartCubit(usecase: ChartUsecase(ChartRepositoryImpl())))
       ],
       child: GetMaterialApp(
+       
           debugShowCheckedModeBanner: false,
           getPages: AppRouting().pages,
           // initialBinding: GeneralBindings(),

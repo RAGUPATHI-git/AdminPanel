@@ -1,5 +1,6 @@
 import 'package:adminpanel/core/constants/animations.dart';
 import 'package:adminpanel/core/constants/enums.dart';
+import 'package:adminpanel/core/constants/gradients.dart';
 import 'package:adminpanel/core/constants/sizes.dart';
 import 'package:adminpanel/features/dashboard/bussiness_logic/entities/chart_data.dart';
 import 'package:adminpanel/features/dashboard/presentation/cubit/chart_cubit.dart';
@@ -16,73 +17,81 @@ class DashboardDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SingleChildScrollView(
-      child: Column(
-        children: [
-          const SizedBox(
-            height: DSizes.spaceBtwSections,
-          ),
-          Row(
-            children: [
-              const SizedBox(
-                width: DSizes.spaceBtwCards - 20,
-              ),
-              Expanded(
+        body: Container(
+      decoration: const BoxDecoration(gradient: DGradients.premiumWhite),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SizedBox(
+              height: DSizes.spaceBtwSections,
+            ),
+            Row(
+              children: [
+                const SizedBox(
+                  width: DSizes.spaceBtwCards - 20,
+                ),
+                Expanded(
+                    child: DCards(
+                        color: Colors.white,
+                        cardtype: CardTypes.small,
+                        body: cardContent(context, "Total Downloads",
+                            DAnimations.chart, "126", 90, 90))),
+                Expanded(
                   child: DCards(
                       color: Colors.white,
                       cardtype: CardTypes.small,
-                      body: cardContent(context, "Total Downloads",
-                          DAnimations.chart, "126", 90, 90))),
-              Expanded(
-                child: DCards(
+                      body: cardContent(context, "Students Logged in",
+                          DAnimations.student, "500", 80, 80)),
+                ),
+                Expanded(
+                  child: DCards(
+                      color: Colors.white,
+                      cardtype: CardTypes.small,
+                      body: cardContent(context, "New Resource Entries",
+                          DAnimations.book, "34", 60, 60)),
+                ),
+                Expanded(
+                  child: DCards(
+                      color: Colors.white,
+                      cardtype: CardTypes.small,
+                      body: cardContent(
+                          context,
+                          "Total Study Materials Uploaded",
+                          DAnimations.docs,
+                          "242",
+                          65,
+                          65)),
+                ),
+                const SizedBox(
+                  width: DSizes.spaceBtwCards - 20,
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: DSizes.spaceBtwSections,
+            ),
+            Row(
+              children: [
+                SizedBox(
+                  width: DSizes.spaceBtwCards - 20,
+                ),
+                Expanded(
+                  child: DCards(
+                      color: Colors.white,
+                      cardtype: CardTypes.rectangle,
+                      body: graph(context)),
+                ),
+                DCards(
                     color: Colors.white,
-                    cardtype: CardTypes.small,
-                    body: cardContent(context, "Students Logged in",
-                        DAnimations.student, "500", 80, 80)),
-              ),
-              Expanded(
-                child: DCards(
-                    color: Colors.white,
-                    cardtype: CardTypes.small,
-                    body: cardContent(context, "New Resource Entries",
-                        DAnimations.book, "34", 60, 60)),
-              ),
-              Expanded(
-                child: DCards(
-                    color: Colors.white,
-                    cardtype: CardTypes.small,
-                    body: cardContent(context, "Total Study Materials Uploaded",
-                        DAnimations.docs, "242", 65, 65)),
-              ),
-              const SizedBox(
-                width: DSizes.spaceBtwCards - 20,
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: DSizes.spaceBtwSections,
-          ),
-          Row(
-            children: [
-              SizedBox(
-                width: DSizes.spaceBtwCards - 20,
-              ),
-              Expanded(
-                child: DCards(
-                    color: Colors.white,
-                    cardtype: CardTypes.rectangle,
-                    body: graph(context)),
-              ),
-              DCards(
-                  color: Colors.white,
-                  cardtype: CardTypes.mid,
-                  body: table(context)),
-              SizedBox(
-                width: DSizes.spaceBtwCards - 20,
-              ),
-            ],
-          )
-        ],
+                    cardtype: CardTypes.mid,
+                    body: table(context)),
+                SizedBox(
+                  width: DSizes.spaceBtwCards - 20,
+                ),
+              ],
+            )
+          ],
+        ),
       ),
     ));
   }

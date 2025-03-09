@@ -2,7 +2,6 @@ import 'package:adminpanel/core/constants/sizes.dart';
 import 'package:adminpanel/core/utils/device_utility.dart';
 import 'package:flutter/material.dart';
 
-
 class Header extends StatelessWidget implements PreferredSizeWidget {
   const Header({super.key, this.scaffoldKey});
   final GlobalKey<ScaffoldState>? scaffoldKey;
@@ -11,12 +10,19 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-          border: Border(bottom: BorderSide(color: Colors.white, width: 1))),
-      padding:
-          const EdgeInsets.symmetric(horizontal: DSizes.md, vertical: DSizes.sm),
+          // gradient: DGradients.flightGet,
+          color: Colors.white,
+          border: Border(
+            bottom: BorderSide(color: Colors.white, width: 1),
+          )),
+      padding: const EdgeInsets.symmetric(
+          horizontal: DSizes.md, vertical: DSizes.sm),
       child: AppBar(
         surfaceTintColor: Colors.transparent,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
+        flexibleSpace: Container(
+          color: Colors.white,
+        ),
         automaticallyImplyLeading:
             !DeviceUtility.isDesktopScreen(context) ? false : false,
         leading: !DeviceUtility.isDesktopScreen(context)
@@ -53,29 +59,28 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
                         width: 2,
                       ),
                       if (DeviceUtility.isDesktopScreen(context))
-                      const Column(
-                            mainAxisSize: MainAxisSize.min,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              // controller.loading.value
-                              //     ? const Rshimmer(
-                              //         height: 10, width: 120, radius: 5)
-                              //     : Text(
-                              //         controller.user.value.firstName.isNotEmpty
-                              //             ? controller.user.value.firstName
-                              //             : "",
-                              //         style: const TextStyle(
-                              //             fontWeight: FontWeight.w600),
-                              //       ),
-                              // controller.loading.value
-                              //     ? const Rshimmer(
-                              //         height: 10, width: 120, radius: 5)
-                              //     : Text(controller.user.value.email.isNotEmpty
-                              //         ? controller.user.value.email
-                              //         : ""),
-                            ],
-                          ),
-                        
+                        const Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            // controller.loading.value
+                            //     ? const Rshimmer(
+                            //         height: 10, width: 120, radius: 5)
+                            //     : Text(
+                            //         controller.user.value.firstName.isNotEmpty
+                            //             ? controller.user.value.firstName
+                            //             : "",
+                            //         style: const TextStyle(
+                            //             fontWeight: FontWeight.w600),
+                            //       ),
+                            // controller.loading.value
+                            //     ? const Rshimmer(
+                            //         height: 10, width: 120, radius: 5)
+                            //     : Text(controller.user.value.email.isNotEmpty
+                            //         ? controller.user.value.email
+                            //         : ""),
+                          ],
+                        ),
                     ],
                   )
                 ],
