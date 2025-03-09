@@ -17,6 +17,7 @@ class Dsidebar extends StatelessWidget {
           : null,
       child: Container(
         decoration: const BoxDecoration(
+            // gradient: DGradients.premiumWhite,
             color: Colors.white,
             border: Border(right: BorderSide(color: Colors.grey, width: 1))),
         child: SingleChildScrollView(
@@ -55,6 +56,18 @@ class Dsidebar extends StatelessWidget {
                           items: [
                             Ritem(Routes.dashBoard, DIcons().dashboard,
                                 "dashboard"),
+                          ],
+                          icon: '',
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Mainitem(
+                          title: "Students",
+                          // icon: ImageUrl.blueDot,
+                          items: [
+                            Ritem(Routes.addStudent, DIcons().addStudent,
+                                " Add Student"),
                           ],
                           icon: '',
                         ),

@@ -12,6 +12,9 @@ class Routes {
   static const String maintenance = '/maintenance';
   static const String error_404 = '/404';
 
+  //students
+  static const String addStudent = '/add-student';
+
   //test screens
   static const String test = '/test';
 }
