@@ -77,8 +77,5 @@ class _DPasswordfieldState extends State<DPasswordfield> {
                           style: TextStyle(color: DColors.standardblack),
                         );
   }
+
 }
-
-
-
-

@@ -1,7 +1,4 @@
-// import 'package:adminpanel/common/widgets/textfield.dart';
-// import 'package:adminpanel/core/constants/button_styles/elevated_buttons.dart';
-// import 'package:adminpanel/core/constants/colors.dart';
-import 'package:adminpanel/common/widgets/textfield.dart';
+import 'package:adminpanel/features/authentication/login/presentation/widgets/textfield.dart';
 import 'package:adminpanel/core/constants/button_styles/elevated_buttons.dart';
 import 'package:adminpanel/core/constants/colors.dart';
 import 'package:adminpanel/core/constants/gradients.dart';
@@ -94,8 +91,8 @@ class LoginDesktop extends StatelessWidget {
                 ),
               
               Positioned(
-                           right :70,
-                           bottom:30,
+                           right :80,
+                           bottom:100,
                            child: ElevatedButton(
                             onPressed: () {},
                             style: DElevatedButtons.loginelevatedButton,
