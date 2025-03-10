@@ -27,8 +27,7 @@ class HelperFunctions {
     }
   }
 
-
-   static List<String> get departmentNames => [
+  static List<String> get departmentNames => [
         "CSE",
         "Agri",
         "Aids",
@@ -40,4 +39,8 @@ class HelperFunctions {
         "Food Tech",
         "Cyber"
       ];
+
+  static List<String> get yearNames => [
+    "I","II","III","IV"
+  ];
 }

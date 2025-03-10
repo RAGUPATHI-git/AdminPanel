@@ -8,4 +8,7 @@ class DAnimations {
   static const String student = '../assets/animations/studentcard.json';
   static const String book = '../assets/animations/book.json';
   static const String docs = '../assets/animations/docs.json';
+
+  //authentication
+  static const String login1 = '../assets/animations/login1.json';
 }
