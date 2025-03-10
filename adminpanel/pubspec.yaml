@@ -31,6 +31,8 @@ dependencies:
   top_snackbar_flutter: ^3.2.0
   flutter_svg: ^2.0.17
   fl_chart: ^0.66.1
+  image_picker: ^1.1.2
+  file_picker: ^9.0.2
 
 
   

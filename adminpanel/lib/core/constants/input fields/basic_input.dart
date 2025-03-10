@@ -1,11 +1,13 @@
 import 'package:adminpanel/core/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class BasicInput extends StatelessWidget {
   final String label;
   final String? hintText;
-  final IconData? prefixIcon;
+  final String? prefixIcon;
   final TextEditingController? controller;
+  final IconButton? suffixIcon;
   final TextInputType keyboardType;
   final bool obscureText;
   final String? Function(String?)? validator;
@@ -14,6 +16,7 @@ class BasicInput extends StatelessWidget {
   const BasicInput({
     super.key,
     required this.label,
+    this.suffixIcon,
     this.hintText,
     this.prefixIcon,
     this.controller,
@@ -28,18 +31,25 @@ class BasicInput extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: 8),
+       const SizedBox(height: 8),
         TextFormField(
           controller: controller,
           keyboardType: keyboardType,
           obscureText: obscureText,
           validator: validator,
           onChanged: onChanged,
+
           decoration: InputDecoration(
+            suffixIcon: prefixIcon != null
+                ? suffixIcon
+                : null,
             label: Text(label),
             labelStyle: TextStyle(color: Colors.black),
             hintText: hintText,
-            prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
+            prefixIcon: prefixIcon != null
+                ? SvgPicture.asset(prefixIcon ?? "",
+                    height: 5, width: 5, fit: BoxFit.scaleDown)
+                : null,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(DSizes.borderRadiusSm),
               borderSide: BorderSide(color: Colors.grey),

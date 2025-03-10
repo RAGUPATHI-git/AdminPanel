@@ -1,12 +1,13 @@
 import 'package:adminpanel/core/constants/fonts.dart';
-import 'package:adminpanel/core/constants/gradients.dart';
 import 'package:adminpanel/core/constants/input%20fields/basic_input.dart';
 import 'package:adminpanel/core/constants/input%20fields/dob_picker.dart';
 import 'package:adminpanel/core/constants/input%20fields/drop_down_input.dart';
+import 'package:adminpanel/core/constants/input%20fields/image_picker.dart';
 import 'package:adminpanel/core/constants/input%20fields/radio_button.dart';
 import 'package:adminpanel/core/constants/sizes.dart';
 import 'package:adminpanel/core/helper%20functions/department.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 class AddStudentDesktop extends StatelessWidget {
   @override
@@ -172,13 +173,34 @@ class AddStudentDesktop extends StatelessWidget {
               width: 5,
             ),
             Expanded(
-                child: DropDownInput(
-              label: "Department",
-              items: HelperFunctions.departmentNames,
-              onChanged: (p0) {},
+                child: BasicInput(
+              label: "EMail",
             )),
             const SizedBox(
               width: 10,
+            ),
+          ],
+        ),
+        const SizedBox(
+          height: DSizes.spaceBtwInputFields,
+        ),
+        Row(
+          children: [
+            const SizedBox(
+              width: 10,
+            ),
+            Expanded(
+                child: DropDownInput(
+              label: "Year",
+              items: HelperFunctions.yearNames,
+              onChanged: (p0) {},
+            )),
+            const SizedBox(
+              width: 5,
+            ),
+            Expanded(
+              child: CustomImagePicker(
+                  label: "Profile", onImageSelected: (value) {}),
             ),
           ],
         ),
