@@ -7,7 +7,7 @@ import 'package:adminpanel/core/constants/input%20fields/radio_button.dart';
 import 'package:adminpanel/core/constants/sizes.dart';
 import 'package:adminpanel/core/helper%20functions/department.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
+
 
 class AddStudentDesktop extends StatelessWidget {
   @override
@@ -212,8 +212,41 @@ class AddStudentDesktop extends StatelessWidget {
   }
 
   Widget accountInformation(BuildContext context) {
-    return Column(
-      children: [Text("account information")],
+    return Center(
+      child: Column(
+        children: [
+          const SizedBox(
+            height: DSizes.spaceBtwItems,
+          ),
+          BasicInput(
+            label: "UserName",
+            hintText: "example@gmail.com",
+          ),
+          const SizedBox(
+            height: DSizes.spaceBtwInputFields,
+          ),
+          BasicInput(
+            label: "Password",
+            obscureText: true,
+          ),
+          const SizedBox(
+            height: DSizes.spaceBtwInputFields,
+          ),
+          BasicInput(
+            label: "Conform Password",
+            hintText: "Re-Enter the password",
+          ),
+          const SizedBox(
+            height: DSizes.spaceBtwSections,
+          ),
+          Row(
+            children: [
+              Expanded(
+                  child: ElevatedButton(onPressed: () {}, child:  Text("Save")))
+            ],
+          )
+        ],
+      ),
     );
   }
 }
