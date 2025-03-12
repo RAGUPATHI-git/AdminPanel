@@ -12,6 +12,7 @@ class BasicInput extends StatelessWidget {
   final bool obscureText;
   final String? Function(String?)? validator;
   final void Function(String)? onChanged;
+  final String? error;
 
   const BasicInput({
     super.key,
@@ -24,6 +25,7 @@ class BasicInput extends StatelessWidget {
     this.obscureText = false,
     this.validator,
     this.onChanged,
+    this.error
   });
 
   @override
@@ -31,21 +33,19 @@ class BasicInput extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-       const SizedBox(height: 8),
+        const SizedBox(height: 8),
         TextFormField(
           controller: controller,
           keyboardType: keyboardType,
           obscureText: obscureText,
           validator: validator,
           onChanged: onChanged,
-
           decoration: InputDecoration(
-            suffixIcon: prefixIcon != null
-                ? suffixIcon
-                : null,
+            suffixIcon: prefixIcon != null ? suffixIcon : null,
             label: Text(label),
             labelStyle: TextStyle(color: Colors.black),
             hintText: hintText,
+            errorText: error,
             prefixIcon: prefixIcon != null
                 ? SvgPicture.asset(prefixIcon ?? "",
                     height: 5, width: 5, fit: BoxFit.scaleDown)

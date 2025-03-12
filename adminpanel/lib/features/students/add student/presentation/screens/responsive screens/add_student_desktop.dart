@@ -1,3 +1,4 @@
+import 'package:adminpanel/core/constants/button_styles/elevated_buttons.dart';
 import 'package:adminpanel/core/constants/fonts.dart';
 import 'package:adminpanel/core/constants/input%20fields/basic_input.dart';
 import 'package:adminpanel/core/constants/input%20fields/dob_picker.dart';
@@ -7,7 +8,6 @@ import 'package:adminpanel/core/constants/input%20fields/radio_button.dart';
 import 'package:adminpanel/core/constants/sizes.dart';
 import 'package:adminpanel/core/helper%20functions/department.dart';
 import 'package:flutter/material.dart';
-
 
 class AddStudentDesktop extends StatelessWidget {
   @override
@@ -21,25 +21,30 @@ class AddStudentDesktop extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "  Add Student",
-                  style: DFont.title,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Row(
-                  children: [
-                    card(context, basicInformation(context),
-                        "Basic Information"),
-                    card(context, accountInformation(context),
-                        "Account Information"),
-                  ],
-                )
-              ],
+            child: Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "  Add Student",
+                    style: DFont.title,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    children: [
+                      card(context, basicInformation(context),
+                          "Basic Information"),
+                      card(context, accountInformation(context),
+                          "Account Information"),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -218,33 +223,75 @@ class AddStudentDesktop extends StatelessWidget {
           const SizedBox(
             height: DSizes.spaceBtwItems,
           ),
-          BasicInput(
-            label: "UserName",
-            hintText: "example@gmail.com",
+          Padding(
+            padding: EdgeInsets.only(left: 32, right: 32.0),
+            child: BasicInput(
+              label: "UserName",
+              hintText: "example@gmail.com",
+            ),
           ),
           const SizedBox(
             height: DSizes.spaceBtwInputFields,
           ),
-          BasicInput(
-            label: "Password",
-            obscureText: true,
+          Padding(
+            padding: const EdgeInsets.only(left: 32, right: 32),
+            child: BasicInput(
+              label: "Password",
+              obscureText: true,
+            ),
           ),
           const SizedBox(
             height: DSizes.spaceBtwInputFields,
           ),
-          BasicInput(
-            label: "Conform Password",
-            hintText: "Re-Enter the password",
+          Padding(
+            padding: EdgeInsets.only(left: 32, right: 32),
+            child: BasicInput(
+              label: "Conform Password",
+              hintText: "Re-Enter the password",
+            ),
           ),
           const SizedBox(
             height: DSizes.spaceBtwSections,
           ),
+          const Divider(
+            thickness: 1,
+            endIndent: 10,
+            indent: 10,
+          ),
+          const SizedBox(
+            height: 20,
+          ),
           Row(
             children: [
               Expanded(
-                  child: ElevatedButton(onPressed: () {}, child:  Text("Save")))
+                child: const SizedBox(
+                  width: 390,
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                  "Cancel",
+                  style: TextStyle(color: Colors.white),
+                ),
+                style: DElevatedButtons.dangerelevatedButton,
+              ),
+              const SizedBox(
+                width: DSizes.spaceBtwItems,
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                  "Save",
+                  style: TextStyle(color: Colors.white),
+                ),
+                style: DElevatedButtons.successelevatedButton,
+              ),
+              const SizedBox(
+                width: 10,
+              )
             ],
-          )
+          ),
         ],
       ),
     );

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class DElevatedButtons {
   static ButtonStyle loginelevatedButton = ElevatedButton.styleFrom(
-    backgroundColor:const Color.fromRGBO(8, 102, 255, 1),
+    backgroundColor: const Color.fromRGBO(8, 102, 255, 1),
     foregroundColor: DColors.standardwhite,
     padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 80),
     textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -62,11 +62,9 @@ class DElevatedButtons {
 
   static ButtonStyle successelevatedButton = ElevatedButton.styleFrom(
     elevation: 10,
-    backgroundColor: DColors.successlight,
+    backgroundColor: DColors.success,
     padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
-    textStyle: const TextStyle(
-      fontSize: 18,
-    ),
+    textStyle: const TextStyle(fontSize: 18, color: Colors.white),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(8.0),
     ),
@@ -86,7 +84,7 @@ class DElevatedButtons {
 
   static ButtonStyle dangerelevatedButton = ElevatedButton.styleFrom(
     elevation: 10,
-    backgroundColor: DColors.dangerlight,
+    backgroundColor: DColors.danger,
     padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
     textStyle: const TextStyle(
       fontSize: 18,

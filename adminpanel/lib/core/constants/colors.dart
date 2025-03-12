@@ -21,7 +21,7 @@ class DColors{
   static const Color infolight = Color(0x99FFFF00);
 
   //Success colors
-  static const Color success = Color(0xFF90EE90);
+  static const Color success = Colors.green;
   static const Color successlight = Color(0x9990EE90);
 
   //Warning colors 
@@ -29,6 +29,6 @@ class DColors{
   static const Color warninglight = Color(0x99FFA500);
 
   //Danger colors 
-  static const Color danger = Color(0xCCFF0000);
+  static const Color danger = Colors.red;
   static const Color dangerlight = Color(0x66FF0000);
 }
