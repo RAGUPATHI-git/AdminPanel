@@ -50,7 +50,7 @@ class _LoginDesktopState extends State<LoginDesktop> {
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: [
                       BoxShadow(
-                        color: Color(0x66004d4d),
+                        color:const Color.fromARGB(60, 33, 149, 243),
                         offset: Offset(10, 10),
                         blurRadius: 15,
                         spreadRadius: 5,
