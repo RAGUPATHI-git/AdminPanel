@@ -24,3 +24,12 @@ enum Departments {
   eee,
   foodtech
 }
+
+
+//Authentication Toast
+
+enum AuthenticationToast{
+    success,
+    error,
+    none
+}

@@ -33,6 +33,7 @@ dependencies:
   fl_chart: ^0.66.1
   image_picker: ^1.1.2
   file_picker: ^9.0.2
+  motion_toast: ^2.11.0
 
 
   
