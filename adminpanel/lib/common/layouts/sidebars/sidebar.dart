@@ -71,6 +71,15 @@ class Dsidebar extends StatelessWidget {
                           ],
                           icon: '',
                         ),
+                        Mainitem(
+                          title: "Events",
+                          // icon: ImageUrl.blueDot,
+                          items: [
+                            Ritem(Routes.event, DIcons().addStudent,
+                                " Update Event"),
+                          ],
+                          icon: '',
+                        ),
                       ],
                     ),
                   ),

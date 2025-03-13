@@ -7,4 +7,10 @@ class DFont {
     fontSize: 18,
     fontWeight: FontWeight.bold,
   ));
+
+  static TextStyle subtitle = GoogleFonts.roboto(
+      textStyle: const TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w500,
+  ));
 }
