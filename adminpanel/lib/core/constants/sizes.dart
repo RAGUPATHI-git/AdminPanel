@@ -1,10 +1,10 @@
 class DSizes {
   //Sizes
   static const double xs = 4.0;
-  static const double sm = 4.0;
-  static const double md = 4.0;
-  static const double lg = 4.0;
-  static const double xl = 4.0;
+  static const double sm = 5.0;
+  static const double md = 6.0;
+  static const double lg = 7.0;
+  static const double xl = 8.0;
 
   //Space Between inputFields
   static const double inputFieldRadius = 12.0;

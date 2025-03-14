@@ -4,12 +4,16 @@ import 'package:image_picker/image_picker.dart';
 
 class CustomImagePicker extends StatefulWidget {
   final String label;
+  final double length;
+  final double breadth;
   final void Function(File?) onImageSelected;
 
   const CustomImagePicker({
     Key? key,
-    required this.label,
     required this.onImageSelected,
+    this.label="Drag & Drop or Tap to Select Image",
+    this.length=100,
+    this.breadth=200,
   }) : super(key: key);
 
   @override
@@ -38,8 +42,8 @@ class _CustomImagePickerState extends State<CustomImagePicker> {
         GestureDetector(
           onTap: () => _pickImage(ImageSource.gallery),
           child: Container(
-            height: 100,
-            width: 200,
+            height: widget.length,
+            width: widget.breadth,
             decoration: BoxDecoration(
               border: Border.all(color: Colors.grey),
               borderRadius: BorderRadius.circular(10),
@@ -50,7 +54,7 @@ class _CustomImagePickerState extends State<CustomImagePicker> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(Icons.image, size: 40, color: Colors.grey),
-                      Text("Drag & Drop or Tap to Select Image"),
+                      Text(widget.label),
                     ],
                   )
                 : Image.file(
