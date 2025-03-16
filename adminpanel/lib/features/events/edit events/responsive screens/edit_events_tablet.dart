@@ -1,3 +1,4 @@
+import 'package:adminpanel/core/constants/fonts.dart';
 import 'package:flutter/material.dart';
 
 class EditEventsTablet extends StatelessWidget {
@@ -5,6 +6,13 @@ class EditEventsTablet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body:Column(
+        children: [
+          Text("EDIT / DELETE EVENTS",style: DFont.title,)
+        ],
+      )
+      ,
+    );
   }
 }

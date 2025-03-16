@@ -1,5 +1,6 @@
 import 'package:adminpanel/common/layouts/template/site%20layout.dart';
 import 'package:adminpanel/features/events/add%20events/responsive%20screens/add_events_desktop.dart';
+import 'package:adminpanel/features/events/add%20events/responsive%20screens/add_events_mobile.dart';
 import 'package:adminpanel/features/events/add%20events/responsive%20screens/add_events_tablet.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +12,7 @@ class AddEventsScreen extends StatelessWidget {
     return SiteLayout(
       desktop: AddEventsDesktop(),
       tablet: AddEventsTablet(),
-      mobile: AddEventsTablet(),
+      mobile: AddEventsMobile(),
       useLayout: true,
       );
   }

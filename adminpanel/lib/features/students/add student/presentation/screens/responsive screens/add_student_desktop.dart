@@ -1,7 +1,7 @@
 import 'package:adminpanel/core/constants/button_styles/elevated_buttons.dart';
 import 'package:adminpanel/core/constants/fonts.dart';
 import 'package:adminpanel/core/constants/input%20fields/basic_input.dart';
-import 'package:adminpanel/core/constants/input%20fields/dob_picker.dart';
+import 'package:adminpanel/core/constants/input%20fields/date_picker.dart';
 import 'package:adminpanel/core/constants/input%20fields/drop_down_input.dart';
 import 'package:adminpanel/core/constants/input%20fields/image_picker.dart';
 import 'package:adminpanel/core/constants/input%20fields/radio_button.dart';
@@ -246,7 +246,7 @@ class AddStudentDesktop extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(left: 32, right: 32),
             child: BasicInput(
-              label: "Conform Password",
+              label: "Confirm Password",
               hintText: "Re-Enter the password",
             ),
           ),

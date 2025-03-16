@@ -6,7 +6,6 @@ class Routes {
 
   //General Screens
   static const String dashBoard = '/dashboard';
-  static const String event = '/event';
 
   //ohter screens
   static const String maintenance = '/maintenance';
@@ -14,6 +13,10 @@ class Routes {
 
   //students
   static const String addStudent = '/add-student';
+
+  //events
+  static const String addevent = '/add-event';
+  static const String editevent = '/edit-event';
 
   //test screens
   static const String test = '/test';
