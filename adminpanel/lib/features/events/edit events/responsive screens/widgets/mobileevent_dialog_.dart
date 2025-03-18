@@ -2,16 +2,14 @@ import 'package:adminpanel/core/constants/button_styles/elevated_buttons.dart';
 import 'package:adminpanel/core/constants/input%20fields/basic_input.dart';
 import 'package:flutter/material.dart';
 
-
-
-class EventDialog extends StatefulWidget {
+class MobileEventDialog extends StatefulWidget {
   final String title;
   final String date;
   final String posterUrl;
   final Function(String, String, String) onEdit;
   final Function() onDelete;
 
-  const EventDialog({
+  const MobileEventDialog({
     Key? key,
     required this.title,
     required this.date,
@@ -21,10 +19,10 @@ class EventDialog extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _EventDialogState createState() => _EventDialogState();
+  _MobileEventDialogState createState() => _MobileEventDialogState();
 }
 
-class _EventDialogState extends State<EventDialog> {
+class _MobileEventDialogState extends State<MobileEventDialog> {
   late TextEditingController _titleController;
   late TextEditingController _dateController;
   late TextEditingController _posterUrlController;
@@ -50,13 +48,12 @@ class _EventDialogState extends State<EventDialog> {
     return AlertDialog(
       title: Text("Edit Event"),
       content: SingleChildScrollView(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+        child: Column(
+          mainAxisSize: MainAxisSize.min, 
           children: [
-       
             Container(
               width: 300, 
-              height: 500, 
+              height: 400,
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.grey),
                 borderRadius: BorderRadius.circular(10),
@@ -80,18 +77,10 @@ class _EventDialogState extends State<EventDialog> {
                 ),
               ),
             ),
-            SizedBox(width: 20), 
-            
-            Expanded(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  BasicInput(label: 'Title', controller: _titleController),
-                  BasicInput(label: 'Date', controller: _dateController),
-                  BasicInput(label: 'Poster URL', controller: _posterUrlController),
-                ],
-              ),
-            ),
+            SizedBox(height: 20), 
+            BasicInput(label: 'Title', controller: _titleController),
+            BasicInput(label: 'Date', controller: _dateController),
+            BasicInput(label: 'Poster URL', controller: _posterUrlController),
           ],
         ),
       ),

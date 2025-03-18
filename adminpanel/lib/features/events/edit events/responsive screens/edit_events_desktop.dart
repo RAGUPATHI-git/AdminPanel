@@ -16,7 +16,7 @@ class _EditEventsDesktopState extends State<EditEventsDesktop> {
   String? _selectedValue = 'Our College';
   String _searchQuery = '';
   
-  final List<Map<String, String>> ourevents = [   //samples
+  final List<Map<String, String>> ourevents = [   //samples for now
     {
       'title': 'Job Fair',
       'date': 'April 15, 2025',
@@ -55,114 +55,94 @@ class _EditEventsDesktopState extends State<EditEventsDesktop> {
     }).toList();
     
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text("EDIT / DELETE EVENTS", style: DFont.title),
-      
-            Divider(thickness: 1),
-      
-            RadioButton(
-              label: "",
-              options: const ['Our College', 'Other College'],
-              selectedValue: '$_selectedValue', 
-              onChanged: (value) {
-                setState(() {
-                  _selectedValue = value; 
-                });
-              },
-            ),
-
-           SizedBox(height: 10),
-           
-            if (_selectedValue == 'Our College') 
-              Expanded( 
-                child: Column(
-                  children: [
-                    BasicInput(
-                      label: 'Search for Event',
-                      onChanged: (value) {
-                      setState(() {
-                        _searchQuery = value; 
-                      });
-                    },
-                   //prefixIcon: 
-                ),
-
-                 SizedBox(height: DSizes.xl,),
-                 Divider(thickness: 1),
-                 SizedBox(height: DSizes.xs,),
-
-                    GridView.count(
-                      crossAxisCount: 3,
-                      padding: const EdgeInsets.all(10),
-                      mainAxisSpacing: 10,
-                      crossAxisSpacing: 10,
-                      shrinkWrap: true,
-                      children: ourfilteredEvents.map((event) {
-                        return EventCard(
-                          title: event['title'] ?? 'No Title', 
-                          date:event['date'] ?? 'No Date', 
-                          posterUrl:event['posterurl'] ?? 'No Poster',
-                          onEdit: (newTitle, newDate, newPosterUrl) {
-                            
-                          },
-                          onDelete: () {
-
-                          }
-                     );
-                      }).toList(), 
-                    ),
-                  ],
-                ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text("EDIT / DELETE EVENTS", style: DFont.title),
+                
+              Divider(thickness: 1),
+                
+              RadioButton(
+                label: "",
+                options: const ['Our College', 'Other College'],
+                selectedValue: '$_selectedValue', 
+                onChanged: (value) {
+                  setState(() {
+                    _selectedValue = value; 
+                  });
+                },
               ),
-
-
-
-            if (_selectedValue == 'Other College') 
-              Expanded( 
-                child: Column(
-                  children: [
-                    BasicInput(
-                      label: 'Search for Event',
-                      onChanged: (value) {
-                      setState(() {
-                        _searchQuery = value; 
-                      });
-                    },
-                   //prefixIcon: 
+        
+              BasicInput(
+                        label: 'Search for Event',
+                        onChanged: (value) {
+                        setState(() {
+                          _searchQuery = value; 
+                        });
+                      },
+                     //prefixIcon: 
                   ),
-                 SizedBox(height: DSizes.xl,),
-                 Divider(thickness: 1),
-                 SizedBox(height: DSizes.xs,),
-
-                    GridView.count(
-                      crossAxisCount: 3,
-                      padding: const EdgeInsets.all(10),
-                      mainAxisSpacing: 10,
-                      crossAxisSpacing: 10,
-                      shrinkWrap: true,
-                      children: otherfilteredEvents.map((event) {
-                        return EventCard(
-                          title: event['title'] ?? 'No Title', 
-                          date:event['date'] ?? 'No Date', 
-                          posterUrl:event['posterurl'] ?? 'No Poster',
-                          onEdit: (newTitle, newDate, newPosterUrl) {
-                            
-                          },
-                          onDelete: () {
-                            
-                          }
-                          );
-                          
-                      }).toList(), 
-                    ),
-                  ],
+          
+                   SizedBox(height: DSizes.xl,),
+                   Divider(thickness: 1),
+                   SizedBox(height: DSizes.xs,),
+        
+        
+          
+             SizedBox(height: 10),
+             
+              if (_selectedValue == 'Our College') 
+                
+                GridView.count(
+                  crossAxisCount: 3,
+                  padding: const EdgeInsets.all(10),
+                  mainAxisSpacing: 10,
+                  crossAxisSpacing: 10,
+                  shrinkWrap: true,
+                  children: ourfilteredEvents.map((event) {
+                    return EventCard(
+                      title: event['title'] ?? 'No Title', 
+                      date:event['date'] ?? 'No Date', 
+                      posterUrl:event['posterurl'] ?? 'No Poster',
+                      onEdit: (newTitle, newDate, newPosterUrl) {
+                        
+                      },
+                      onDelete: () {
+                    
+                      }
+                 );
+                  }).toList(), 
                 ),
-              ),
-          ],
+          
+          
+          
+              if (_selectedValue == 'Other College') 
+                GridView.count(
+                  crossAxisCount: 3,
+                  padding: const EdgeInsets.all(10),
+                  mainAxisSpacing: 10,
+                  crossAxisSpacing: 10,
+                  shrinkWrap: true,
+                  children: otherfilteredEvents.map((event) {
+                    return EventCard(
+                      title: event['title'] ?? 'No Title', 
+                      date:event['date'] ?? 'No Date', 
+                      posterUrl:event['posterurl'] ?? 'No Poster',
+                      onEdit: (newTitle, newDate, newPosterUrl) {
+                        
+                      },
+                      onDelete: () {
+                        
+                      }
+                      );
+                      
+                  }).toList(), 
+                ),
+            ],
+          ),
         ),
       ),
     );

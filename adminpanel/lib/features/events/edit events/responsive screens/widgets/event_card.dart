@@ -1,4 +1,6 @@
+import 'package:adminpanel/core/constants/sizes.dart';
 import 'package:adminpanel/features/events/edit%20events/responsive%20screens/widgets/event_dialog.dart';
+import 'package:adminpanel/features/events/edit%20events/responsive%20screens/widgets/mobileevent_dialog_.dart';
 import 'package:flutter/material.dart';
 
   
@@ -24,12 +26,20 @@ class EventCard extends StatelessWidget {
       onTap: (){
         showDialog(context: context, 
         builder: (BuildContext context){
-          return EventDialog(
+          if (MediaQuery.of(context).size.width <= DSizes.mobileScreenSize){
+          return MobileEventDialog(
             title: title, 
             date: date, 
             posterUrl: posterUrl, 
             onEdit: onEdit, onDelete: 
+            onDelete);   }
+          else{
+            return EventDialog(title: title, 
+            date: date, 
+            posterUrl: posterUrl, 
+            onEdit: onEdit, onDelete: 
             onDelete);
+          }
         }
         );
       },
@@ -63,8 +73,8 @@ class EventCard extends StatelessWidget {
                               errorBuilder: (BuildContext context, Object error, StackTrace? stackTrace) {
                                 return Text('Image not available');
                               },
-                             width: double.infinity,
-                            height: 300,
+                            width: double.infinity,
+                            height: 500,
                             fit: BoxFit.cover,
                      ),
                                        ),
