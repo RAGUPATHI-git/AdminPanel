@@ -3,14 +3,19 @@ import 'package:adminpanel/common/layouts/sidebars/menu/menuitem.dart';
 import 'package:adminpanel/core/constants/icons.dart';
 import 'package:adminpanel/core/constants/sizes.dart';
 import 'package:adminpanel/core/utils/device_utility.dart';
+import 'package:adminpanel/features/authentication/login/data/repositories/authentication_repository.dart';
+import 'package:adminpanel/features/authentication/login/presentation/login_screen.dart';
 import 'package:adminpanel/routes/routes.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Dsidebar extends StatelessWidget {
   const Dsidebar({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(AuthenticationRepository());
     return Drawer(
       shape: DeviceUtility.isDesktopScreen(context)
           ? const BeveledRectangleBorder()
@@ -95,10 +100,21 @@ class Dsidebar extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: RMenuItem(
-                    route: Routes.logout,
-                    icon: DIcons().logout,
-                    itemName: "Logout"),
+                child: InkWell(
+                  onTap: () async {
+                    controller.signOut();
+                    // GetPage(
+                    //     name: Routes.login, page: () => const LoginScreen());
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginScreen()));
+                  },
+                  child: RMenuItem(
+                      route: Routes.logout,
+                      icon: DIcons().logout,
+                      itemName: "Logout"),
+                ),
               )
             ],
           ),

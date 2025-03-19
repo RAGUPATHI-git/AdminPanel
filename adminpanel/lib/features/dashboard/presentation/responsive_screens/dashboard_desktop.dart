@@ -2,6 +2,7 @@ import 'package:adminpanel/core/constants/animations.dart';
 import 'package:adminpanel/core/constants/enums.dart';
 import 'package:adminpanel/core/constants/gradients.dart';
 import 'package:adminpanel/core/constants/sizes.dart';
+import 'package:adminpanel/features/authentication/login/controllers/login_controller.dart';
 import 'package:adminpanel/features/dashboard/bussiness_logic/entities/chart_data.dart';
 import 'package:adminpanel/features/dashboard/presentation/cubit/chart_cubit.dart';
 import 'package:adminpanel/features/dashboard/presentation/widgets/cards.dart';
@@ -9,6 +10,8 @@ import 'package:adminpanel/features/dashboard/presentation/widgets/chart.dart';
 import 'package:adminpanel/features/dashboard/presentation/widgets/pie_chart_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:lottie/lottie.dart';
 
 class DashboardDesktop extends StatelessWidget {
@@ -134,6 +137,8 @@ class DashboardDesktop extends StatelessWidget {
   }
 
   Widget graph(BuildContext context) {
+    final controller = Get.put(LoginController());
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -164,7 +169,9 @@ class DashboardDesktop extends StatelessWidget {
           ),
         ),
         ElevatedButton(
-          onPressed: () => context.read<ChartCubit>().loadChart(),
+          onPressed: () => true
+              ? controller.signOUt()
+              : context.read<ChartCubit>().loadChart(),
           child: const Icon(Icons.refresh),
         )
       ],

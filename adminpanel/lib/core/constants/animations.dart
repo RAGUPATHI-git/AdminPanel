@@ -2,6 +2,7 @@ class DAnimations {
   //response
   static const String maintenance = '../assets/animations/maintenance.json';
   static const String error404 = '../assets/animations/error404.json';
+  static const String timerLoading = '../assets/animations/timer.json';
 
   //stats
   static const String chart = '../assets/animations/stats.json';

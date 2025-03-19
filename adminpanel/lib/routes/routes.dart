@@ -20,4 +20,19 @@ class Routes {
 
   //test screens
   static const String test = '/test';
+  static const String loading = '/loading';
+
+  static List sideBarMenuItems = [
+    login,
+    dashBoard,
+    forgorPassword,
+    logout,
+    dashBoard,
+    event,
+    maintenance,
+    error_404,
+    addStudent,
+    test,
+    loading
+  ];
 }
