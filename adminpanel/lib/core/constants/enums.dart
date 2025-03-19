@@ -24,3 +24,7 @@ enum Departments {
   eee,
   foodtech
 }
+
+
+//user Roles
+enum AppRole {    select, admin, staff,student}
