@@ -5,9 +5,11 @@ import 'package:adminpanel/core/constants/sizes.dart';
 import 'package:adminpanel/core/constants/button_styles/elevated_buttons.dart';
 import 'package:adminpanel/core/constants/gradients.dart';
 import 'package:adminpanel/features/authentication/login/bloc/auth_bloc.dart';
+import 'package:adminpanel/features/authentication/login/controllers/login_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 class LoginDesktop extends StatefulWidget {
@@ -21,6 +23,8 @@ class _LoginDesktopState extends State<LoginDesktop> {
   bool obscure = false;
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(LoginController());
+
     //instance creation
     final authBloc = BlocProvider.of<AuthBloc>(context);
     return Scaffold(
@@ -83,7 +87,11 @@ class _LoginDesktopState extends State<LoginDesktop> {
                           ),
                           SizedBox(height: 20),
                           BasicInput(
+                            controller: controller.email,
                             label: "Email",
+                            validator: (value) {
+                              if (value == '' && value == null) {}
+                            },
                             hintText: "example@gmail.com",
                             prefixIcon: DIcons().user,
                             onChanged: (email) =>
@@ -94,6 +102,7 @@ class _LoginDesktopState extends State<LoginDesktop> {
                           ),
                           SizedBox(height: 20),
                           BasicInput(
+                            controller: controller.password,
                             onChanged: (password) =>
                                 authBloc.add(AuthPassword(password: password)),
                             label: "Password",
@@ -139,7 +148,8 @@ class _LoginDesktopState extends State<LoginDesktop> {
                               height: 50,
                               width: 400,
                               child: ElevatedButton(
-                                onPressed: () => authBloc.add(AuthSumbitted()),
+                                onPressed: () =>
+                                    controller.emailAndpasswordSignIn(),
                                 style: DElevatedButtons.loginelevatedButton,
                                 child: Text(
                                   'LOGIN',

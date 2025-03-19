@@ -1,3 +1,5 @@
+import 'package:adminpanel/binding/general_bindings.dart';
+import 'package:adminpanel/features/authentication/login/data/repositories/authentication_repository.dart';
 import 'package:adminpanel/features/dashboard/bussiness_logic/use%20cases/chart_usecase.dart';
 import 'package:adminpanel/features/dashboard/data/repositories/chart_repository_impl.dart';
 import 'package:adminpanel/features/dashboard/presentation/cubit/chart_cubit.dart';
@@ -18,21 +20,29 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [
-        BlocProvider(
+        providers: [
+          BlocProvider(
             create: (_) => TestCubit(
-                testUseCase: TestUseCase(reopository1: TestRepositoryImpl()))),
-
-        BlocProvider(create: (_) => ChartCubit(usecase: ChartUsecase(ChartRepositoryImpl())))
-      ],
-      child: GetMaterialApp(
-       
+              testUseCase: TestUseCase(reopository1: TestRepositoryImpl()),
+            ),
+          ),
+          BlocProvider(
+            create: (_) => ChartCubit(
+              usecase: ChartUsecase(ChartRepositoryImpl()),
+            ),
+          ),
+        ],
+        child: GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          getPages: AppRouting().pages,
-          // initialBinding: GeneralBindings(),
-          initialRoute: Routes.login,
+          getPages: AppRoutes.pages,
+          initialBinding: GeneralBindings(),
+          initialRoute: AuthenticationRepository().firebaseUser.value != null
+            ? Routes.dashBoard
+            : Routes.login,
           unknownRoute: GetPage(
-              name: Routes.error_404, page: () => const Error404Screen())),
-    );
+            name: Routes.error_404,
+            page: () => const Error404Screen(),
+          ),
+        ));
   }
 }

@@ -2,15 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DFont {
-  static TextStyle title = GoogleFonts.roboto(
+  static TextStyle title = GoogleFonts.sora(
       textStyle: const TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.bold,
   ));
 
-  static TextStyle subtitle = GoogleFonts.roboto(
+  static TextStyle subTitle = GoogleFonts.roboto(
       textStyle: const TextStyle(
-    fontSize: 18,
-    fontWeight: FontWeight.w500,
-  ));
+          fontSize: 14, fontWeight: FontWeight.normal, color: Colors.grey));
 }
