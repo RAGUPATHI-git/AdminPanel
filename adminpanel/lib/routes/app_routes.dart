@@ -1,6 +1,7 @@
 import 'package:adminpanel/binding/general_bindings.dart';
 import 'package:adminpanel/features/authentication/login/presentation/login_screen.dart';
 import 'package:adminpanel/features/dashboard/dashboard_screen.dart';
+import 'package:adminpanel/features/events/add%20events/add_events_screen.dart';
 import 'package:adminpanel/features/response/error_404/presentation/error_404_screen.dart';
 import 'package:adminpanel/features/response/maintenance/presentation/maintenance_screen.dart';
 import 'package:adminpanel/features/students/add%20student/presentation/screens/add_students_screen.dart';
@@ -23,5 +24,31 @@ class AppRoutes {
       binding: GeneralBindings(),
       title: "Dashboard",
     ),
+
+        name: Routes.maintenance,
+        page: () => const MaintenanceScreen(),
+        transitionDuration:const Duration(seconds: 0)),
+    GetPage(
+        name: Routes.test,
+        page: () => const TestScreen(),
+        transitionDuration:const Duration(seconds: 0)),
+    GetPage(
+        name: Routes.login,
+        page: () => const LoginScreen(),
+        transitionDuration:const Duration(seconds: 0)),
+    GetPage(
+        name: Routes.dashBoard,
+        page: () =>const DashboardScreen(),
+        popGesture: false,
+        transitionDuration: const Duration(seconds: 0)),
+    GetPage(
+        name: Routes.addStudent,
+        page: () => const AddStudentsScreen(),
+        transitionDuration:  const Duration(seconds: 0)),
+     GetPage(
+      name: Routes.event,
+      page: () => const AddEventsScreen(),
+      transitionDuration:  const Duration(seconds: 0))
+
   ];
 }
