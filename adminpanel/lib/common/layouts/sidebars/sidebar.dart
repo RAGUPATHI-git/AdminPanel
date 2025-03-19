@@ -80,8 +80,11 @@ class Dsidebar extends StatelessWidget {
                           title: "Events",
                           // icon: ImageUrl.blueDot,
                           items: [
-                            Ritem(Routes.event, DIcons().addStudent,
-                                " Update Event"),
+                            Ritem(Routes.addevent, DIcons().addEvent,
+                                " Add Event"),
+
+                            Ritem(Routes.editevent, DIcons().editEvent,
+                                " Edit/Delete Event"),
                           ],
                           icon: '',
                         ),

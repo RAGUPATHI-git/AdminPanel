@@ -3,14 +3,20 @@ import 'package:flutter/material.dart';
 class CustomDatePicker extends StatefulWidget {
   final String label;
   final DateTime? selectedDate;
+  final DateTime firstDate;
+  final DateTime lastDate;
   final void Function(DateTime) onDateSelected;
 
-  const CustomDatePicker({
+   CustomDatePicker({
     Key? key,
     required this.label,
     this.selectedDate,
+    DateTime? firstDate,
+    DateTime? lastDate,
     required this.onDateSelected,
-  }) : super(key: key);
+  }) : firstDate = firstDate ?? DateTime(1900),
+       lastDate = lastDate ?? DateTime.now(),
+       super(key: key);
 
   @override
   _CustomDatePickerState createState() => _CustomDatePickerState();
@@ -29,8 +35,8 @@ class _CustomDatePickerState extends State<CustomDatePicker> {
     final DateTime? picked = await showDatePicker(
       context: context,
       initialDate: _selectedDate ?? DateTime.now(),
-      firstDate: DateTime(1900),
-      lastDate: DateTime.now(),
+      firstDate: widget.firstDate,
+      lastDate: widget.lastDate,
     );
     if (picked != null && picked != _selectedDate) {
       setState(() {

@@ -1,7 +1,7 @@
 import 'package:adminpanel/core/constants/button_styles/elevated_buttons.dart';
 import 'package:adminpanel/core/constants/fonts.dart';
 import 'package:adminpanel/core/constants/input%20fields/basic_input.dart';
-import 'package:adminpanel/core/constants/input%20fields/dob_picker.dart';
+import 'package:adminpanel/core/constants/input%20fields/date_picker.dart';
 import 'package:adminpanel/core/constants/input%20fields/drop_down_input.dart';
 import 'package:adminpanel/core/constants/input%20fields/image_picker.dart';
 import 'package:adminpanel/core/constants/input%20fields/radio_button.dart';
@@ -17,7 +17,7 @@ class AddEventsDesktop extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -57,8 +57,11 @@ class AddEventsDesktop extends StatelessWidget {
                             
                              Expanded(child: BasicInput(label: "Event title")),
                              Expanded(child: BasicInput(label: "Location")),
-                             Expanded(child: CustomDatePicker(label: "Event Date", onDateSelected:(value){})),
-                             Expanded(child: BasicInput(label: "Link for the event")), //////////must changeeee
+                             Expanded(child: CustomDatePicker(label: "Event Date",
+                                      firstDate: DateTime(2025),
+                                      lastDate: DateTime(2050),
+                                      onDateSelected:(value){})),
+                             Expanded(child: BasicInput(label: "Link for the event")),
                             
                               
                             ],

@@ -2,6 +2,7 @@ import 'package:adminpanel/binding/general_bindings.dart';
 import 'package:adminpanel/features/authentication/login/presentation/login_screen.dart';
 import 'package:adminpanel/features/dashboard/dashboard_screen.dart';
 import 'package:adminpanel/features/events/add%20events/add_events_screen.dart';
+import 'package:adminpanel/features/events/edit%20events/edit_events_screen.dart';
 import 'package:adminpanel/features/response/error_404/presentation/error_404_screen.dart';
 import 'package:adminpanel/features/response/maintenance/presentation/maintenance_screen.dart';
 import 'package:adminpanel/features/students/add%20student/presentation/screens/add_students_screen.dart';
@@ -46,9 +47,13 @@ class AppRoutes {
         page: () => const AddStudentsScreen(),
         transitionDuration:  const Duration(seconds: 0)),
      GetPage(
-      name: Routes.event,
+      name: Routes.addevent,
       page: () => const AddEventsScreen(),
-      transitionDuration:  const Duration(seconds: 0))
+      transitionDuration:  const Duration(seconds: 0)),
+    GetPage(
+      name: Routes.editevent, 
+      page: () => const EditEventsScreen(),
+      transitionDuration: const Duration(seconds:0)),
 
   ];
 }
