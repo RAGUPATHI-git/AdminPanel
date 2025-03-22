@@ -1,12 +1,9 @@
 import 'package:adminpanel/core/constants/fonts.dart';
-import 'package:adminpanel/core/constants/icons.dart';
 import 'package:adminpanel/core/constants/input fields/radio_button.dart';
 import 'package:adminpanel/core/constants/input fields/basic_input.dart';
 import 'package:adminpanel/core/constants/sizes.dart';
 import 'package:adminpanel/features/events/edit events/responsive screens/widgets/event_card.dart';
 import 'package:adminpanel/features/events/state/business_logic/entities.dart';
-import 'package:adminpanel/features/events/state/business_logic/repositaries.dart';
-import 'package:adminpanel/features/events/state/business_logic/usecase.dart';
 import 'package:adminpanel/features/events/state/presentation/cubit/event_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -23,19 +20,15 @@ class _EditEventsDesktopState extends State<EditEventsDesktop> {
   String _searchQuery = '';
 
   @override
+  void initState() {
+    super.initState();
+    context.read<OurEventCubit>().loadEvents();
+    context.read<OtherEventCubit>().loadEvents();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (context) => OurEventCubit(
-              OurEventUseCase(RepositoryProvider.of<OurEventRepositary>(context))),
-        ),
-        BlocProvider(
-          create: (context) => OtherEventCubit(
-              OtherEventUseCase(RepositoryProvider.of<OtherEventRepositary>(context))),
-        ),
-      ],
-      child: Scaffold(
+    return Scaffold(
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(20.0),
@@ -54,7 +47,7 @@ class _EditEventsDesktopState extends State<EditEventsDesktop> {
             ),
           ),
         ),
-      ),
+      
     );
   }
 
@@ -65,7 +58,7 @@ class _EditEventsDesktopState extends State<EditEventsDesktop> {
       selectedValue: _selectedValue,
       onChanged: (value) {
         setState(() {
-          _selectedValue = _selectedValue; 
+          _selectedValue= '$value'; 
         });
       },
     );
@@ -76,7 +69,7 @@ class _EditEventsDesktopState extends State<EditEventsDesktop> {
       label: 'Search for Event',
       onChanged: (value) {
         setState(() {
-          _searchQuery = _searchQuery; 
+          _searchQuery = value; 
         });
       },
     );
@@ -110,7 +103,7 @@ class _EditEventsDesktopState extends State<EditEventsDesktop> {
             final filteredEvents = state.events.where((event) {
               return event.title.toLowerCase().contains(_searchQuery.toLowerCase());
             }).toList();
-                       return _otherbuildEventGrid(filteredEvents);
+            return _otherbuildEventGrid(filteredEvents);
           }
           return Center(child: Text('No events loaded for Other College'));
         },
@@ -120,6 +113,7 @@ class _EditEventsDesktopState extends State<EditEventsDesktop> {
 
   Widget _ourbuildEventGrid(List<OurEventEntity> events) {
     return GridView.count(
+      shrinkWrap: true, // To lay out RenderBox properly
       crossAxisCount: 3,
       padding: const EdgeInsets.all(10),
       mainAxisSpacing: 10,
@@ -140,6 +134,7 @@ class _EditEventsDesktopState extends State<EditEventsDesktop> {
 
   Widget _otherbuildEventGrid(List<OtherEventEntity> events) {
     return GridView.count(
+      shrinkWrap: true, 
       crossAxisCount: 3,
       padding: const EdgeInsets.all(10),
       mainAxisSpacing: 10,

@@ -7,7 +7,7 @@ abstract class OurEventSampleDataSource{
 class OurEventSampleDataSourceImpl extends OurEventSampleDataSource{
   @override
   Future<List<OurEventModel>> fetchEvents() async {
-    await Future.delayed(Duration(seconds: 0));
+    await Future.delayed(Duration(seconds: 2));
 
     final List<OurEventModel> events =[
       OurEventModel(
@@ -33,7 +33,7 @@ abstract class OtherEventSampleDataSource{
 class OtherEventSampleDataSourceImpl extends OtherEventSampleDataSource{
   @override
   Future<List<OtherEventModel>> fetchEvents() async {
-    await Future.delayed(Duration(seconds: 0));
+    await Future.delayed(Duration(seconds: 2));
 
     final List<OtherEventModel> events =[
       OtherEventModel(
