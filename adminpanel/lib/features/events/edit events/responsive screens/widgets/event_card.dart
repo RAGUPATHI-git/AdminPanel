@@ -31,14 +31,15 @@ class EventCard extends StatelessWidget {
             title: title, 
             date: date, 
             posterUrl: posterUrl, 
-            onEdit: onEdit, onDelete: 
-            onDelete);   }
+            onEdit: onEdit, 
+            onDelete: onDelete);   }
           else{
-            return EventDialog(title: title, 
-            date: date, 
+            return EventDialog(
+            title: title, 
+            date: date,
             posterUrl: posterUrl, 
-            onEdit: onEdit, onDelete: 
-            onDelete);
+            onEdit: onEdit, 
+            onDelete: onDelete);
           }
         }
         );
@@ -48,7 +49,7 @@ class EventCard extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),
-        child: SingleChildScrollView(    //not scrolling
+        child: SingleChildScrollView(   
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [

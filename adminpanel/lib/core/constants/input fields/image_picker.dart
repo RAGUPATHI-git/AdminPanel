@@ -6,6 +6,8 @@ class CustomImagePicker extends StatefulWidget {
   final String label;
   final double length;
   final double breadth;
+  final Color? backgroundColor;
+  final String? backgroundImageUrl;
   final void Function(File?) onImageSelected;
 
   const CustomImagePicker({
@@ -14,6 +16,8 @@ class CustomImagePicker extends StatefulWidget {
     this.label="Drag & Drop or Tap to Select Image",
     this.length=100,
     this.breadth=200,
+    this.backgroundColor ,
+    this.backgroundImageUrl
   }) : super(key: key);
 
   @override
@@ -47,7 +51,10 @@ class _CustomImagePickerState extends State<CustomImagePicker> {
             decoration: BoxDecoration(
               border: Border.all(color: Colors.grey),
               borderRadius: BorderRadius.circular(10),
-              color: Colors.grey[200],
+              color: widget.backgroundColor?? Colors.grey[200],
+              image: widget.backgroundImageUrl !=  null ?
+                    DecorationImage(image: NetworkImage(widget.backgroundImageUrl!),
+                    fit:BoxFit.cover) : null
             ),
             child: _selectedImage == null
                 ? Column(

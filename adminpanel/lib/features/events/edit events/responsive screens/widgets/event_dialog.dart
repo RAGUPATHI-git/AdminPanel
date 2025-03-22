@@ -1,5 +1,6 @@
 import 'package:adminpanel/core/constants/button_styles/elevated_buttons.dart';
 import 'package:adminpanel/core/constants/input%20fields/basic_input.dart';
+import 'package:adminpanel/core/constants/input%20fields/image_picker.dart';
 import 'package:flutter/material.dart';
 
 
@@ -47,83 +48,69 @@ class _EventDialogState extends State<EventDialog> {
 
   @override
   Widget build(BuildContext context) {
-    return AlertDialog(
-      title: Text("Edit Event"),
-      content: SingleChildScrollView(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-       
-            Container(
-              width: 300, 
-              height: 500, 
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: Image.network(
-                  _posterUrlController.text,
-                  fit: BoxFit.cover,
-                  loadingBuilder: (context, child, loadingProgress) {
-                    if (loadingProgress == null) return child;
-                    return Center(child: CircularProgressIndicator());
-                  },
-                  errorBuilder: (context, error, stackTrace) {
-                    return Center(
-                      child: Text(
-                        'Image not available',
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ),
-            SizedBox(width: 20), 
-            
-            Expanded(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
+    return Expanded(
+      child: AlertDialog(
+        title: Text("Edit Event"),
+        content: SingleChildScrollView(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Column(
                 children: [
-                  BasicInput(label: 'Title', controller: _titleController),
-                  BasicInput(label: 'Date', controller: _dateController),
-                  BasicInput(label: 'Poster URL', controller: _posterUrlController),
+                  CustomImagePicker(
+                  length: 500,
+                  breadth: 300,
+                  label: " " ,
+                  backgroundImageUrl: _posterUrlController.text,
+                  onImageSelected: (value){}),
+                  Text("Click on the poster to edit")
                 ],
               ),
-            ),
-          ],
+      
+              SizedBox(width: 20), 
+              
+              Expanded(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    BasicInput(label: 'Title', controller: _titleController),
+                    BasicInput(label: 'Date', controller: _dateController),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
+        actions: [
+          ElevatedButton(
+            style: DElevatedButtons.successelevatedButton,
+            onPressed: () {
+              widget.onEdit(
+                _titleController.text,
+                _dateController.text,
+                _posterUrlController.text,
+              );
+              Navigator.of(context).pop();
+            },
+            child: Text('Edit Event'),
+          ),
+          ElevatedButton(
+            style: DElevatedButtons.dangerelevatedButton,
+            onPressed: () {
+              widget.onDelete();
+              Navigator.of(context).pop();
+            },
+            child: Text('Delete Event'),
+          ),
+          ElevatedButton(
+            style: DElevatedButtons.customelevatedButton,
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: Text('Cancel'),
+          ),
+        ],
       ),
-      actions: [
-        ElevatedButton(
-          style: DElevatedButtons.successelevatedButton,
-          onPressed: () {
-            widget.onEdit(
-              _titleController.text,
-              _dateController.text,
-              _posterUrlController.text,
-            );
-            Navigator.of(context).pop();
-          },
-          child: Text('Save'),
-        ),
-        ElevatedButton(
-          style: DElevatedButtons.dangerelevatedButton,
-          onPressed: () {
-            widget.onDelete();
-            Navigator.of(context).pop();
-          },
-          child: Text('Delete'),
-        ),
-        ElevatedButton(
-          style: DElevatedButtons.customelevatedButton,
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-          child: Text('Cancel'),
-        ),
-      ],
     );
   }
 }
