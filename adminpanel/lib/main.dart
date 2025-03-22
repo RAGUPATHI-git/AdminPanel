@@ -1,17 +1,24 @@
-import 'package:adminpanel/features/authentication/login/presentation/responsive_screens/login_desktop.dart';
+import 'package:adminpanel/app.dart';
+import 'package:adminpanel/features/authentication/login/data/repositories/authentication_repository.dart';
+import 'package:adminpanel/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:url_strategy/url_strategy.dart';
 
-void main() {
-  runApp(  const App());
-}
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-class App extends StatelessWidget {
-  const App({super.key});
+  //Initialize getX local storage
+  await GetStorage.init();
 
-  @override
-  Widget build(BuildContext context) {
-    return const  MaterialApp(
-      home: LoginDesktop(),
-    );
-  }
+  //Remove # from url
+  setPathUrlStrategy();
+
+  //Initialize Firebase & Authentication Repository
+
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
+  .then((value) => Get.put(AuthenticationRepository()));
+  runApp(const App());
 }
