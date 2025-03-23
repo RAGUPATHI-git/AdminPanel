@@ -11,4 +11,8 @@ class DFont {
   static TextStyle subTitle = GoogleFonts.roboto(
       textStyle: const TextStyle(
           fontSize: 14, fontWeight: FontWeight.normal, color: Colors.grey));
+
+  static TextStyle tableHeading = GoogleFonts.roboto(
+      textStyle: const TextStyle(
+          fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white));
 }

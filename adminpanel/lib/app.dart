@@ -4,6 +4,9 @@ import 'package:adminpanel/features/dashboard/bussiness_logic/use%20cases/chart_
 import 'package:adminpanel/features/dashboard/data/repositories/chart_repository_impl.dart';
 import 'package:adminpanel/features/dashboard/presentation/cubit/chart_cubit.dart';
 import 'package:adminpanel/features/response/error_404/presentation/error_404_screen.dart';
+import 'package:adminpanel/features/students/student%20list/data/repositories/student_list_impl.dart';
+import 'package:adminpanel/features/students/student%20list/domain/use%20case/student_list_usecase.dart';
+import 'package:adminpanel/features/students/student%20list/presentation/cubit/students_cubit.dart';
 import 'package:adminpanel/features/test/bussiness_logic/use%20cases/test_use_case.dart';
 import 'package:adminpanel/features/test/data/repositories/test_repository_impl.dart';
 import 'package:adminpanel/features/test/presentation/cubit/test_cubit.dart';
@@ -15,8 +18,9 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 class App extends StatelessWidget {
-  const App({super.key});
-
+   App({super.key});
+  
+ 
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -31,6 +35,8 @@ class App extends StatelessWidget {
               usecase: ChartUsecase(ChartRepositoryImpl()),
             ),
           ),
+          BlocProvider(
+        create: (context) => StudentCubit(GetStudentsUseCase())..fetchStudents())
         ],
         child: GetMaterialApp(
           debugShowCheckedModeBanner: false,

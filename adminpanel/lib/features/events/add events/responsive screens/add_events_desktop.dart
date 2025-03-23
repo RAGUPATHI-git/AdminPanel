@@ -40,7 +40,7 @@ class AddEventsDesktop extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                             Text("   Event Info",style: DFont.subtitle,),
+                             Text("   Event Info",style: DFont.subTitle,),
                              Divider(thickness: 1,indent: 10,endIndent: 10,),
                             
                              RadioButton(
