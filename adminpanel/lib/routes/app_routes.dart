@@ -9,6 +9,7 @@ import 'package:adminpanel/features/students/student%20list/presentation/screens
 import 'package:adminpanel/features/test/presentation/test_screen.dart';
 import 'package:adminpanel/routes/app_middleware.dart';
 import 'package:adminpanel/routes/routes.dart';
+import 'package:get/get.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 class AppRoutes {
@@ -21,6 +22,7 @@ class AppRoutes {
       binding: GeneralBindings(),
       title: "Dashboard",
     ),
+
     GetPage(
         name: Routes.maintenance,
         page: () => const MaintenanceScreen(),

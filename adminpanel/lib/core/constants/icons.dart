@@ -13,4 +13,5 @@ class DIcons {
   final String lock = '../assets/icons/lock.svg';
   final String crossedEye = '../assets/icons/crossedeye.svg';
   final String eye = '../assets/icons/eye.svg';
+  //static String search ='../assets/icons/search.svg';
 }
