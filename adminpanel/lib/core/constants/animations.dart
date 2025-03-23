@@ -4,6 +4,9 @@ class DAnimations {
   static const String error404 = '../assets/animations/error404.json';
   static const String timerLoading = '../assets/animations/timer.json';
 
+  //loading
+  static const String loading = '../assets/animations/loading.json';
+
   //stats
   static const String chart = '../assets/animations/stats.json';
   static const String student = '../assets/animations/studentcard.json';
