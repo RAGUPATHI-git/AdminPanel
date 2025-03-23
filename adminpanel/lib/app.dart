@@ -8,6 +8,9 @@ import 'package:adminpanel/features/events/state/data/data_source.dart';
 import 'package:adminpanel/features/events/state/data/repositaries.dart';
 import 'package:adminpanel/features/events/state/presentation/cubit/event_cubit.dart';
 import 'package:adminpanel/features/response/error_404/presentation/error_404_screen.dart';
+import 'package:adminpanel/features/students/student%20list/data/repositories/student_list_impl.dart';
+import 'package:adminpanel/features/students/student%20list/domain/use%20case/student_list_usecase.dart';
+import 'package:adminpanel/features/students/student%20list/presentation/cubit/students_cubit.dart';
 import 'package:adminpanel/features/test/bussiness_logic/use%20cases/test_use_case.dart';
 import 'package:adminpanel/features/test/data/repositories/test_repository_impl.dart';
 import 'package:adminpanel/features/test/presentation/cubit/test_cubit.dart';
@@ -19,8 +22,9 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 class App extends StatelessWidget {
-  const App({super.key});
-
+   App({super.key});
+  
+ 
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -36,6 +40,7 @@ class App extends StatelessWidget {
             ),
           ),
           BlocProvider(
+
             create: (_) => OurEventCubit(
               OurEventUseCase(
                 OurEventRepositaryImpl(dataSource:OurEventSampleDataSourceImpl())))
@@ -45,6 +50,7 @@ class App extends StatelessWidget {
               OtherEventUseCase(
                 OtherEventRepositaryImpl(dataSource: OtherEventSampleDataSourceImpl()))),
         ),
+
         ],
         child: GetMaterialApp(
           debugShowCheckedModeBanner: false,

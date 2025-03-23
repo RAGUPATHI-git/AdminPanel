@@ -13,6 +13,7 @@ class UserModel {
   AppRole role;
   DateTime? createdAt;
   DateTime? updatedAt;
+  String dob;
 
 //constructor for userModel.
   UserModel(
@@ -25,9 +26,8 @@ class UserModel {
       this.profilePicture = '',
       this.role = AppRole.staff,
       this.createdAt,
-      this.updatedAt});
-
-  
+      this.updatedAt,
+       this.dob = ''});
 
   //Helper methods
   String get fullName => Formatter.fullName(firstName, lastName);
@@ -35,7 +35,7 @@ class UserModel {
   String get formattedUpdatedDate => Formatter.formatDate(updatedAt);
 
   // static function to create an empty user model.
-  static UserModel empty() => UserModel(email: '');
+  static UserModel empty() => UserModel(email: '', dob: '');
 
   Map<String, dynamic> toJson() {
     return {

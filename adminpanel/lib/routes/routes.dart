@@ -13,6 +13,7 @@ class Routes {
 
   //students
   static const String addStudent = '/add-student';
+  static const String studentList = '/student-list';
 
   //events
   static const String addevent = '/add-event';
