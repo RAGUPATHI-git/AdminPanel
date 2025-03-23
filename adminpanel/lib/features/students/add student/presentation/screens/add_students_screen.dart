@@ -14,8 +14,8 @@ class AddStudentsScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => AddStudentBloc(),
       child: SiteLayout(
-        mobile: const AddStudentMobile(),
-        tablet: const AddStudentTablet(),
+        mobile:  AddStudentMobile(),
+        tablet:  AddStudentTablet(),
         desktop: AddStudentDesktop(),
         useLayout: true,
       ),

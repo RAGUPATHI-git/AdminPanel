@@ -10,7 +10,7 @@ class AddStudentEntity {
   final String gender;
   final String student_id;
   final String phoneno;
-  final String useremail;
+  final String username;
   final AppRole role;
   final String dob;
 
@@ -24,7 +24,7 @@ class AddStudentEntity {
     required this.gender,
     required this.student_id,
     required this.phoneno,
-    required this.useremail,
+    required this.username,
     required this.role,
     required this.dob
   });

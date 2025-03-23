@@ -17,7 +17,7 @@ class AddStudentRepoImpl implements AddStudentRepositiory {
   Future<String> addStudent(AddStudentEntity student) async {
     try {
       print("add success2");
-      print(student.email);
+      print(student.username);
       print(student.password);
       final studentModel = StudentModel(
         firstName: student.firstname,
@@ -25,7 +25,7 @@ class AddStudentRepoImpl implements AddStudentRepositiory {
         regNo: student.student_id,
         phoneNo: student.phoneno,
         email: student.email,
-        username: student.firstname + " " + student.lastname,
+        username: student.username,
         password: student.password,
         department: student.department,
         gender: student.gender,
@@ -33,11 +33,26 @@ class AddStudentRepoImpl implements AddStudentRepositiory {
         dob: student.dob,
       );
 
-      await firebaseAuth.createUserWithEmailAndPassword(
-          email: student.email, password: student.password);
+      final UserCredential userId =
+          await firebaseAuth.createUserWithEmailAndPassword(
+              email: studentModel.email, password: studentModel.password);
 
-      print("add success");
-      return ' ';
+      await userRepository.createUser(
+        UserModel(
+            email: studentModel.email,
+            createdAt: DateTime.now(),
+            id: userId.user?.uid ?? '',
+            firstName: studentModel.firstname,
+            lastName: studentModel.lastname,
+            role: AppRole.student,
+            phoneNumber: studentModel.phoneno,
+            updatedAt: DateTime.now(),
+            userName: "${studentModel.firstname} ${studentModel.lastname}",
+            dob: studentModel.dob
+            ),
+      );
+      print("created successfully");
+      return 'success';
     } catch (e) {
       print(e.toString());
       return e.toString();

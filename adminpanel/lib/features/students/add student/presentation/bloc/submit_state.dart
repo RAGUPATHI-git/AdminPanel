@@ -2,7 +2,13 @@ abstract class AddStudentState {}
 
 class AddStudentInitial extends AddStudentState {}
 
-class AddStudentLoading extends AddStudentState {}
+class AddStudentLoading extends AddStudentState {
+  bool isLoading = false;
+
+  AddStudentLoading({required this.isLoading});
+
+
+}
 
 class AddStudentSuccess extends AddStudentState {
   final String message;

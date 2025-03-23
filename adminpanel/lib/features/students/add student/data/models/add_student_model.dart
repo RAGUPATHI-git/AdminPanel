@@ -20,7 +20,7 @@ class StudentModel extends AddStudentEntity {
             student_id: regNo,
             phoneno: phoneNo,
             email: email,
-            useremail: "$firstName $lastName",
+            username: "$firstName $lastName",
             password: password,
             department: department,
             gender: gender,
