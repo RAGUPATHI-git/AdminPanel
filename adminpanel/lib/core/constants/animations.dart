@@ -3,6 +3,7 @@ class DAnimations {
   static const String maintenance = '../assets/animations/maintenance.json';
   static const String error404 = '../assets/animations/error404.json';
   static const String timerLoading = '../assets/animations/timer.json';
+  static const String noData = '../assets/animations/nodata.json';
 
   //loading
   static const String loading = '../assets/animations/loading.json';

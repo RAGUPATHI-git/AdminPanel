@@ -8,6 +8,7 @@ import 'package:adminpanel/features/events/state/data/data_source.dart';
 import 'package:adminpanel/features/events/state/data/repositaries.dart';
 import 'package:adminpanel/features/events/state/presentation/cubit/event_cubit.dart';
 import 'package:adminpanel/features/response/error_404/presentation/error_404_screen.dart';
+import 'package:adminpanel/features/students/add%20student/presentation/bloc/submit_bloc.dart';
 import 'package:adminpanel/features/students/student%20list/data/repositories/student_list_impl.dart';
 import 'package:adminpanel/features/students/student%20list/domain/use%20case/student_list_usecase.dart';
 import 'package:adminpanel/features/students/student%20list/presentation/cubit/students_cubit.dart';
@@ -22,9 +23,8 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 class App extends StatelessWidget {
-   App({super.key});
-  
- 
+  App({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -40,25 +40,24 @@ class App extends StatelessWidget {
             ),
           ),
           BlocProvider(
-
-            create: (_) => OurEventCubit(
-              OurEventUseCase(
-                OurEventRepositaryImpl(dataSource:OurEventSampleDataSourceImpl())))
-         ),
-         BlocProvider(
-           create: (_) => OtherEventCubit(
-              OtherEventUseCase(
-                OtherEventRepositaryImpl(dataSource: OtherEventSampleDataSourceImpl()))),
-        ),
-
+              create: (_) => OurEventCubit(OurEventUseCase(
+                  OurEventRepositaryImpl(
+                      dataSource: OurEventSampleDataSourceImpl())))),
+          BlocProvider(
+            create: (_) => OtherEventCubit(OtherEventUseCase(
+                OtherEventRepositaryImpl(
+                    dataSource: OtherEventSampleDataSourceImpl()))),
+          ),
+          BlocProvider(create: (_) => StudentCubit()),
+          BlocProvider(create: (_) => AddStudentBloc())
         ],
         child: GetMaterialApp(
           debugShowCheckedModeBanner: false,
           getPages: AppRoutes.pages,
           initialBinding: GeneralBindings(),
           initialRoute: AuthenticationRepository().firebaseUser.value != null
-            ? Routes.dashBoard
-            : Routes.login,
+              ? Routes.dashBoard
+              : Routes.login,
           unknownRoute: GetPage(
             name: Routes.error_404,
             page: () => const Error404Screen(),
