@@ -14,11 +14,15 @@ class UserModel {
   DateTime? createdAt;
   DateTime? updatedAt;
   String dob;
+  String year;
+  String department;
+  String regno;
 
 //constructor for userModel.
   UserModel(
       {this.id,
       required this.email,
+      this.department = '',
       this.firstName = '',
       this.lastName = '',
       this.userName = '',
@@ -27,7 +31,9 @@ class UserModel {
       this.role = AppRole.staff,
       this.createdAt,
       this.updatedAt,
-       this.dob = ''});
+      this.dob = '',
+      this.year = 'I',
+      this.regno = ''});
 
   //Helper methods
   String get fullName => Formatter.fullName(firstName, lastName);
@@ -35,7 +41,7 @@ class UserModel {
   String get formattedUpdatedDate => Formatter.formatDate(updatedAt);
 
   // static function to create an empty user model.
-  static UserModel empty() => UserModel(email: '', dob: '');
+  static UserModel empty() => UserModel(email: '', dob: '', regno: '');
 
   Map<String, dynamic> toJson() {
     return {
@@ -47,7 +53,10 @@ class UserModel {
       'profilePicture': profilePicture,
       'Role': role.name.toString(),
       'createdAt': createdAt,
-      'updatedAt': createdAt = DateTime.now()
+      'updatedAt': createdAt = DateTime.now(),
+      'dob': dob,
+      'department': department,
+      'year': year
     };
   }
 

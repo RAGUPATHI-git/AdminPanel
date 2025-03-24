@@ -26,14 +26,15 @@ class StudentModel extends AddStudentEntity {
             gender: gender,
             year: year,
             role: AppRole.student,
-            dob:  dob
+            dob:  dob,
+            regNO: regNo
           );
 
   factory StudentModel.fromJson(Map<String, dynamic> json) {
     return StudentModel(
       firstName: json['firstName'],
       lastName: json['lastName'],
-      regNo: json['regNo'],
+      regNo: json['regno'],
       phoneNo: json['phoneNo'],
       email: json['email'],
       username: json['username'],
@@ -55,7 +56,8 @@ class StudentModel extends AddStudentEntity {
       'password': password,
       'gender': gender,
       'department': department,
-      'dob' : dob
+      'dob' : dob,
+      'regno' : regNO
     };
   }
 }

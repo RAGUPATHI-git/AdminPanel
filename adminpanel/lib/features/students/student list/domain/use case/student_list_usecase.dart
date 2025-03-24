@@ -8,6 +8,6 @@ class GetStudentsUseCase {
   // GetStudentsUseCase(this.repository);
 
   Future<List<Student>> execute(int page, int pageSize) {
-    return repository.getStudents(page, pageSize);
+    return repository.fetchStudents();
   }
 }
