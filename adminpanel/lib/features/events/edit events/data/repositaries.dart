@@ -1,6 +1,7 @@
-import 'package:adminpanel/features/events/state/business_logic/repositaries.dart';
-import 'package:adminpanel/features/events/state/data/data_source.dart';
-import 'package:adminpanel/features/events/state/data/model.dart';
+import 'package:adminpanel/features/events/edit%20events/data/data_source.dart';
+import 'package:adminpanel/features/events/edit%20events/data/model.dart';
+import 'package:adminpanel/features/events/edit%20events/domain/repositaries.dart';
+
 
 class OurEventRepositaryImpl extends OurEventRepositary{
   final OurEventSampleDataSource dataSource;

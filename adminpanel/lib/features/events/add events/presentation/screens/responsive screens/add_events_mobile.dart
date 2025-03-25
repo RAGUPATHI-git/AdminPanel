@@ -9,9 +9,14 @@ import 'package:adminpanel/core/constants/sizes.dart';
 import 'package:adminpanel/core/helper%20functions/events.dart';
 import 'package:flutter/material.dart';
 
-class AddEventsMobile extends StatelessWidget {
+class AddEventsMobile extends StatefulWidget {
   const AddEventsMobile({super.key});
 
+  @override
+  State<AddEventsMobile> createState() => _AddEventsMobileState();
+}
+
+class _AddEventsMobileState extends State<AddEventsMobile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

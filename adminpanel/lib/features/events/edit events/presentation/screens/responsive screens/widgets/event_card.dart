@@ -1,6 +1,6 @@
 import 'package:adminpanel/core/constants/sizes.dart';
-import 'package:adminpanel/features/events/edit%20events/responsive%20screens/widgets/event_dialog.dart';
-import 'package:adminpanel/features/events/edit%20events/responsive%20screens/widgets/mobileevent_dialog_.dart';
+import 'package:adminpanel/features/events/edit%20events/presentation/screens/responsive%20screens/widgets/event_dialog.dart';
+import 'package:adminpanel/features/events/edit%20events/presentation/screens/responsive%20screens/widgets/mobileevent_dialog_.dart';
 import 'package:flutter/material.dart';
 
   
