@@ -122,8 +122,9 @@ class _AddEventsDesktopState extends State<AddEventsDesktop> {
                                       label: 'Event categories',
                                       items: HelperFunctions1.eventCategories,
                                       onChanged: (value) {
-                                        selectedCategory =  value ?? '';
-                                        categoryController.text = selectedCategory;
+                                        selectedCategory = value ?? '';
+                                        categoryController.text =
+                                            selectedCategory;
                                       })),
                               SizedBox(
                                 height: 5,
@@ -147,7 +148,8 @@ class _AddEventsDesktopState extends State<AddEventsDesktop> {
                                       lastDate: DateTime(2050),
                                       onDateSelected: (value) {
                                         setState(() {
-                                          dateController.text = Formatter.formatDate(value);
+                                          dateController.text =
+                                              Formatter.formatDate(value);
                                         });
                                       })),
                               Expanded(
@@ -189,30 +191,35 @@ class _AddEventsDesktopState extends State<AddEventsDesktop> {
                           width: 390,
                           child: BlocBuilder<AddEventBloc, AddEventState>(
                             builder: (context, state) {
-                              return (state is AddEventIsLoading && state.isLoading)
-                              ? SizedBox(height: 100,width: 100,
-                                     //child: Lottie.asset(DAnimations.)
-                                     )
-                              :  ElevatedButton(
-                                onPressed: () {
-                                  context.read<AddEventBloc>().add(EventForm(
-                                      college: selectedCollege,
-                                      category: selectedCategory,
-                                      title: titleController.text,
-                                      location: locationController.text,
-                                      date: dateController.text,
-                                      link: linkController.text));
-                                },
-                                style: DElevatedButtons.loginelevatedButton,
-                                child: Text(
-                                  'POST THE EVENT',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              );
+                              return (state is AddEventIsLoading &&
+                                      state.isLoading)
+                                  ? SizedBox(
+                                      height: 100, width: 100,
+                                      //child: Lottie.asset(DAnimations.)
+                                    )
+                                  : ElevatedButton(
+                                      onPressed: () {
+                                        context.read<AddEventBloc>().add(
+                                            EventForm(
+                                                college: selectedCollege,
+                                                category: selectedCategory,
+                                                title: titleController.text,
+                                                location:
+                                                    locationController.text,
+                                                date: dateController.text,
+                                                link: linkController.text));
+                                      },
+                                      style:
+                                          DElevatedButtons.loginelevatedButton,
+                                      child: Text(
+                                        'POST THE EVENT',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    );
                             },
                           ),
                         ),
