@@ -28,3 +28,4 @@ enum Departments {
 
 //user Roles
 enum AppRole {    select, admin, staff,student}
+

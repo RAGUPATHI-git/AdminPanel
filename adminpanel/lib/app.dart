@@ -3,11 +3,13 @@ import 'package:adminpanel/features/authentication/login/data/repositories/authe
 import 'package:adminpanel/features/dashboard/bussiness_logic/use%20cases/chart_usecase.dart';
 import 'package:adminpanel/features/dashboard/data/repositories/chart_repository_impl.dart';
 import 'package:adminpanel/features/dashboard/presentation/cubit/chart_cubit.dart';
-import 'package:adminpanel/features/events/state/business_logic/usecase.dart';
-import 'package:adminpanel/features/events/state/data/data_source.dart';
-import 'package:adminpanel/features/events/state/data/repositaries.dart';
-import 'package:adminpanel/features/events/state/presentation/cubit/event_cubit.dart';
+import 'package:adminpanel/features/events/add%20events/presentation/bloc/bloc/add_event_bloc.dart';
+import 'package:adminpanel/features/events/edit%20events/data/data_source.dart';
+import 'package:adminpanel/features/events/edit%20events/data/repositaries.dart';
+import 'package:adminpanel/features/events/edit%20events/domain/usecase.dart';
+import 'package:adminpanel/features/events/edit%20events/presentation/cubit/event_cubit.dart';
 import 'package:adminpanel/features/response/error_404/presentation/error_404_screen.dart';
+import 'package:adminpanel/features/students/add%20student/presentation/bloc/submit_bloc.dart';
 import 'package:adminpanel/features/students/student%20list/data/repositories/student_list_impl.dart';
 import 'package:adminpanel/features/students/student%20list/domain/use%20case/student_list_usecase.dart';
 import 'package:adminpanel/features/students/student%20list/presentation/cubit/students_cubit.dart';
@@ -22,9 +24,8 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 class App extends StatelessWidget {
-   App({super.key});
-  
- 
+  App({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -41,6 +42,7 @@ class App extends StatelessWidget {
           ),
           BlocProvider(
 
+
             create: (_) => OurEventCubit(
               OurEventUseCase(
                 OurEventRepositaryImpl(dataSource:OurEventSampleDataSourceImpl())))
@@ -50,6 +52,19 @@ class App extends StatelessWidget {
               OtherEventUseCase(
                 OtherEventRepositaryImpl(dataSource: OtherEventSampleDataSourceImpl()))),
         ),
+        BlocProvider(create: (_)=>AddEventBloc()),
+
+        BlocProvider(
+              create: (_) => OurEventCubit(OurEventUseCase(
+                  OurEventRepositaryImpl(
+                      dataSource: OurEventSampleDataSourceImpl())))),
+          BlocProvider(
+            create: (_) => OtherEventCubit(OtherEventUseCase(
+                OtherEventRepositaryImpl(
+                    dataSource: OtherEventSampleDataSourceImpl()))),
+          ),
+          BlocProvider(create: (_) => StudentCubit()),
+          BlocProvider(create: (_) => AddStudentBloc())
 
         ],
         child: GetMaterialApp(
@@ -57,8 +72,8 @@ class App extends StatelessWidget {
           getPages: AppRoutes.pages,
           initialBinding: GeneralBindings(),
           initialRoute: AuthenticationRepository().firebaseUser.value != null
-            ? Routes.dashBoard
-            : Routes.login,
+              ? Routes.dashBoard
+              : Routes.login,
           unknownRoute: GetPage(
             name: Routes.error_404,
             page: () => const Error404Screen(),

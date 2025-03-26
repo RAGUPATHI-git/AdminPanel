@@ -13,19 +13,21 @@ class AddStudentEntity {
   final String username;
   final AppRole role;
   final String dob;
+  final String regNO;
 
-  AddStudentEntity({
-    required this.firstname,
-    required this.lastname,
-    required this.department,
-    required this.email,
-    required this.password,
-    required this.year,
-    required this.gender,
-    required this.student_id,
-    required this.phoneno,
-    required this.username,
-    required this.role,
-    required this.dob
-  });
+  AddStudentEntity(
+      {required this.firstname,
+      required this.lastname,
+      required this.department,
+      required this.email,
+      required this.password,
+      required this.year,
+      required this.gender,
+      required this.student_id,
+      required this.phoneno,
+      required this.username,
+      required this.role,
+      required this.dob,
+      required this.regNO
+      });
 }

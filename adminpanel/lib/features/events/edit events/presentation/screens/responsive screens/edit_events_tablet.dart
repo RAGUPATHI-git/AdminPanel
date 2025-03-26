@@ -2,30 +2,32 @@ import 'package:adminpanel/core/constants/fonts.dart';
 import 'package:adminpanel/core/constants/input%20fields/basic_input.dart';
 import 'package:adminpanel/core/constants/input%20fields/radio_button.dart';
 import 'package:adminpanel/core/constants/sizes.dart';
-import 'package:adminpanel/features/events/edit%20events/responsive%20screens/widgets/event_card.dart';
-import 'package:adminpanel/features/events/state/business_logic/entities.dart';
-import 'package:adminpanel/features/events/state/presentation/cubit/event_cubit.dart';
+import 'package:adminpanel/features/events/edit%20events/domain/entities.dart';
+import 'package:adminpanel/features/events/edit%20events/presentation/cubit/event_cubit.dart';
+import 'package:adminpanel/features/events/edit%20events/presentation/screens/responsive%20screens/widgets/event_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class EditEventsMobile extends StatefulWidget {
-  const EditEventsMobile({super.key});
+class EditEventsTablet extends StatefulWidget {
+  const EditEventsTablet({super.key});
 
   @override
-  State<EditEventsMobile> createState() => _EditEventsMobileState();
+  State<EditEventsTablet> createState() => _EditEventsTabletState();
 }
 
-class _EditEventsMobileState extends State<EditEventsMobile> {
+class _EditEventsTabletState extends State<EditEventsTablet> {
 
   String _selectedValue = 'Our College';
   String _searchQuery = '';
- 
+  
+
   @override
   void initState() {
     super.initState();
     context.read<OurEventCubit>().loadEvents();
     context.read<OtherEventCubit>().loadEvents();
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -37,17 +39,18 @@ class _EditEventsMobileState extends State<EditEventsMobile> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text("EDIT / DELETE EVENTS", style: DFont.title),
+                
               Divider(thickness: 1),
               _buildRadioButton(),
-              SizedBox(height: 10),
               _buildSearchInput(),
               SizedBox(height: DSizes.xl,),
-              Divider(thickness: 1), 
+              Divider(thickness: 1),
               SizedBox(height: DSizes.xs,),
               _buildEventList(context)
+
             ],
           ),
-        ),
+        ),       
       ),
     );
   }
@@ -115,7 +118,7 @@ class _EditEventsMobileState extends State<EditEventsMobile> {
   Widget _ourbuildEventGrid(List<OurEventEntity> events) {
     return GridView.count(
       shrinkWrap: true, // To lay out RenderBox properly
-      crossAxisCount: 2,
+      crossAxisCount: 3,
       padding: const EdgeInsets.all(10),
       mainAxisSpacing: 10,
       crossAxisSpacing: 10,
@@ -136,7 +139,7 @@ class _EditEventsMobileState extends State<EditEventsMobile> {
   Widget _otherbuildEventGrid(List<OtherEventEntity> events) {
     return GridView.count(
       shrinkWrap: true, 
-      crossAxisCount: 2,
+      crossAxisCount: 3,
       padding: const EdgeInsets.all(10),
       mainAxisSpacing: 10,
       crossAxisSpacing: 10,
@@ -154,3 +157,4 @@ class _EditEventsMobileState extends State<EditEventsMobile> {
     );
   }
 }
+

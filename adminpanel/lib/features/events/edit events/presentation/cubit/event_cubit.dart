@@ -1,5 +1,5 @@
-import 'package:adminpanel/features/events/state/business_logic/entities.dart';
-import 'package:adminpanel/features/events/state/business_logic/usecase.dart';
+import 'package:adminpanel/features/events/edit%20events/domain/entities.dart';
+import 'package:adminpanel/features/events/edit%20events/domain/usecase.dart';
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 

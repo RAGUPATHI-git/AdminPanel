@@ -2,7 +2,7 @@ import 'package:adminpanel/binding/general_bindings.dart';
 import 'package:adminpanel/features/authentication/login/presentation/login_screen.dart';
 import 'package:adminpanel/features/dashboard/dashboard_screen.dart';
 import 'package:adminpanel/features/events/add%20events/presentation/screens/add_events_screen.dart';
-import 'package:adminpanel/features/events/edit%20events/edit_events_screen.dart';
+import 'package:adminpanel/features/events/edit%20events/presentation/screens/edit_events_screen.dart';
 import 'package:adminpanel/features/response/maintenance/presentation/maintenance_screen.dart';
 import 'package:adminpanel/features/students/add%20student/presentation/screens/add_students_screen.dart';
 import 'package:adminpanel/features/students/student%20list/presentation/screens/student_list_screen.dart';

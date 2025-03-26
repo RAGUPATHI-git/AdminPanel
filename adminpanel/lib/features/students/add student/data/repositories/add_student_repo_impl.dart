@@ -39,17 +39,20 @@ class AddStudentRepoImpl implements AddStudentRepositiory {
 
       await userRepository.createUser(
         UserModel(
-            email: studentModel.email,
-            createdAt: DateTime.now(),
-            id: userId.user?.uid ?? '',
-            firstName: studentModel.firstname,
-            lastName: studentModel.lastname,
-            role: AppRole.student,
-            phoneNumber: studentModel.phoneno,
-            updatedAt: DateTime.now(),
-            userName: "${studentModel.firstname} ${studentModel.lastname}",
-            dob: studentModel.dob
-            ),
+          email: studentModel.email,
+          createdAt: DateTime.now(),
+          id: userId.user?.uid ?? '',
+          firstName: studentModel.firstname,
+          lastName: studentModel.lastname,
+          role: AppRole.student,
+          phoneNumber: studentModel.phoneno,
+          updatedAt: DateTime.now(),
+          userName: "${studentModel.firstname} ${studentModel.lastname}",
+          dob: studentModel.dob,
+          year: studentModel.year,
+          regno: studentModel.regNO,
+          department: student.department,
+        ),
       );
       print("created successfully");
       return 'success';
