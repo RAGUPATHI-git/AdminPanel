@@ -1,4 +1,5 @@
-import 'package:adminpanel/features/events/state/business_logic/entities.dart';
+import 'package:adminpanel/features/events/edit%20events/domain/entities.dart';
+
 
 class OurEventModel extends OurEventEntity{
   OurEventModel({ 

@@ -1,25 +1,23 @@
 import 'package:adminpanel/core/constants/fonts.dart';
-import 'package:adminpanel/core/constants/input%20fields/basic_input.dart';
-import 'package:adminpanel/core/constants/input%20fields/radio_button.dart';
+import 'package:adminpanel/core/constants/input fields/radio_button.dart';
+import 'package:adminpanel/core/constants/input fields/basic_input.dart';
 import 'package:adminpanel/core/constants/sizes.dart';
-import 'package:adminpanel/features/events/edit%20events/responsive%20screens/widgets/event_card.dart';
-import 'package:adminpanel/features/events/state/business_logic/entities.dart';
-import 'package:adminpanel/features/events/state/presentation/cubit/event_cubit.dart';
+import 'package:adminpanel/features/events/edit%20events/domain/entities.dart';
+import 'package:adminpanel/features/events/edit%20events/presentation/cubit/event_cubit.dart';
+import 'package:adminpanel/features/events/edit%20events/presentation/screens/responsive%20screens/widgets/event_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class EditEventsTablet extends StatefulWidget {
-  const EditEventsTablet({super.key});
+class EditEventsDesktop extends StatefulWidget {
+  const EditEventsDesktop({super.key});
 
   @override
-  State<EditEventsTablet> createState() => _EditEventsTabletState();
+  _EditEventsDesktopState createState() => _EditEventsDesktopState();
 }
 
-class _EditEventsTabletState extends State<EditEventsTablet> {
-
-  String _selectedValue = 'Our College';
+class _EditEventsDesktopState extends State<EditEventsDesktop> {
+  String _selectedValue = 'Our College'; 
   String _searchQuery = '';
-  
 
   @override
   void initState() {
@@ -28,30 +26,28 @@ class _EditEventsTabletState extends State<EditEventsTablet> {
     context.read<OtherEventCubit>().loadEvents();
   }
 
-
   @override
   Widget build(BuildContext context) {
-     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text("EDIT / DELETE EVENTS", style: DFont.title),
-                
-              Divider(thickness: 1),
-              _buildRadioButton(),
-              _buildSearchInput(),
-              SizedBox(height: DSizes.xl,),
-              Divider(thickness: 1),
-              SizedBox(height: DSizes.xs,),
-              _buildEventList(context)
-
-            ],
+    return Scaffold(
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("EDIT / DELETE EVENTS", style: DFont.title),
+                Divider(thickness: 1),
+                _buildRadioButton(),
+                _buildSearchInput(),
+                SizedBox(height: DSizes.xl),
+                Divider(thickness: 1),
+                SizedBox(height: DSizes.xs),
+                _buildEventList(context),
+              ],
+            ),
           ),
-        ),       
-      ),
+        ),
+      
     );
   }
 
@@ -157,4 +153,3 @@ class _EditEventsTabletState extends State<EditEventsTablet> {
     );
   }
 }
-

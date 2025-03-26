@@ -1,4 +1,5 @@
-import 'package:adminpanel/features/events/state/data/model.dart';
+import 'package:adminpanel/features/events/edit%20events/data/model.dart';
+
 
 abstract class OurEventSampleDataSource{
   Future<List<OurEventModel>> fetchEvents();
