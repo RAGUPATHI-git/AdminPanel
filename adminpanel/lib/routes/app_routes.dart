@@ -6,6 +6,8 @@ import 'package:adminpanel/features/events/edit%20events/presentation/screens/ed
 import 'package:adminpanel/features/response/maintenance/presentation/maintenance_screen.dart';
 import 'package:adminpanel/features/students/add%20student/presentation/screens/add_students_screen.dart';
 import 'package:adminpanel/features/students/student%20list/presentation/screens/student_list_screen.dart';
+import 'package:adminpanel/features/syllabus/add%20syllabus/presentation/screens/add_syllabus.dart';
+import 'package:adminpanel/features/syllabus/all%20syllabus/presentation/screens/all_syllabus.dart';
 import 'package:adminpanel/features/test/presentation/test_screen.dart';
 import 'package:adminpanel/routes/app_middleware.dart';
 import 'package:adminpanel/routes/routes.dart';
@@ -56,12 +58,28 @@ class AppRoutes {
       transitionDuration: const Duration(seconds: 0),
       middlewares: [RoutesMiddleware()],
       binding: GeneralBindings(),
-    ),
+      ),
     GetPage(
         name: Routes.studentList,
         page: () => const StudentListScreen(),
         transitionDuration: const Duration(seconds: 0),
         middlewares: [RoutesMiddleware()],
-        binding: GeneralBindings())
+        binding: GeneralBindings()
+      ),
+    GetPage(
+      name: Routes.addSyllabus, 
+      page: ()=> const AddSyllabus(),
+      transitionDuration: const Duration(seconds: 0),
+      middlewares: [RoutesMiddleware()],
+      binding: GeneralBindings()
+      ),
+      GetPage(
+      name: Routes.allSyllabus, 
+      page: ()=> const AllSyllabus(),
+      transitionDuration: const Duration(seconds: 0),
+      middlewares: [RoutesMiddleware()],
+      binding: GeneralBindings()
+      ),
+
   ];
 }
