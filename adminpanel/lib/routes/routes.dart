@@ -19,6 +19,10 @@ class Routes {
   static const String addevent = '/add-event';
   static const String editevent = '/edit-event';
 
+  //syllabus
+  static const String addSyllabus = '/addsyllabus';
+  static const String allSyllabus = '/allsyllabus';
+
   //test screens
   static const String test = '/test';
   static const String loading = '/loading';
@@ -31,6 +35,8 @@ class Routes {
     dashBoard,
     addevent,
     editevent,
+    addSyllabus,
+    allSyllabus,
     maintenance,
     error_404,
     addStudent,
