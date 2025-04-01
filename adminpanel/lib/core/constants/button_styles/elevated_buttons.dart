@@ -12,29 +12,32 @@ class DElevatedButtons {
     ),
   );
 
-  static ButtonStyle customelevatedButton = ElevatedButton.styleFrom(
-    elevation: 10,
-    backgroundColor: DColors.custom, 
-    foregroundColor: DColors.standardwhite,
-    padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
-    textStyle: const TextStyle(
-      fontSize: 18,
+  static ButtonStyle customElevatedButton = ElevatedButton.styleFrom(
+  elevation: 10,
+  backgroundColor: DColors.custom, 
+  foregroundColor: DColors.standardwhite,
+  padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
+  shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(8),
     ),
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(8.0),
-    ),
+  textStyle: const TextStyle(
+    fontWeight: FontWeight.w500,
+    fontSize: 18,
+  )
   );
+
 
   static ButtonStyle standardelevatedButton = ElevatedButton.styleFrom(
     elevation: 10,
     backgroundColor: DColors.standardwhite,
+
     foregroundColor: DColors.standardlightblack,
     padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
     textStyle: const TextStyle(
       fontSize: 18,
     ),
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(8.0),
+      borderRadius: BorderRadius.circular(10.0),
     ),
   );
 
@@ -47,7 +50,7 @@ class DElevatedButtons {
       fontSize: 18,
     ),
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(8.0),
+      borderRadius: BorderRadius.circular(10.0),
     ),
   );
 
@@ -56,11 +59,10 @@ class DElevatedButtons {
     backgroundColor: DColors.infolight,
     foregroundColor: DColors.standardwhite,
     padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
-    textStyle: const TextStyle(
-      fontSize: 18,
+    textStyle: const TextStyle(fontSize: 18,
     ),
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(8.0),
+      borderRadius: BorderRadius.circular(10.0),
     ),
   );
 
@@ -68,10 +70,11 @@ class DElevatedButtons {
     elevation: 10,
     foregroundColor: DColors.standardwhite, 
     backgroundColor: DColors.success,
-    padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
+   
+    padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 30.0),
     textStyle: const TextStyle(fontSize: 18, color: Colors.white),
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(8.0),
+      borderRadius: BorderRadius.circular(10.0),
     ),
   );
 
@@ -79,12 +82,13 @@ class DElevatedButtons {
     elevation: 10,
     foregroundColor: DColors.standardwhite,
     backgroundColor: DColors.warninglight,
-    padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
+   
+    padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 30.0),
     textStyle: const TextStyle(
       fontSize: 18,
     ),
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(8.0),
+      borderRadius: BorderRadius.circular(10.0),
     ),
   );
 
@@ -92,12 +96,12 @@ class DElevatedButtons {
     elevation: 10,
     foregroundColor: DColors.standardwhite,
     backgroundColor: DColors.danger,
-    padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
+    padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 30.0),
     textStyle: const TextStyle(
       fontSize: 18,
     ),
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(8.0),
+      borderRadius: BorderRadius.circular(10.0),
     ),
   );
 }

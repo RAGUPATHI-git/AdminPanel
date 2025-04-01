@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
 
-class RadioButton extends StatelessWidget {
+class RadioButton extends StatefulWidget {
   final String label;
   final List<String> options;
   final String selectedValue;
   final void Function(String?) onChanged;
 
-  const RadioButton({
-    Key? key,
+  RadioButton({
     required this.label,
     required this.options,
     required this.selectedValue,
     required this.onChanged,
-  }) : super(key: key);
+  });
 
+  @override
+  _RadioButtonState createState() => _RadioButtonState();
+}
+
+class _RadioButtonState extends State<RadioButton> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -22,7 +26,7 @@ class RadioButton extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(top: 8, left: 8, right: 8),
           child: Text(
-            label,
+            widget.label,
             style: TextStyle(
               fontSize: 12,
               fontWeight: FontWeight.w500,
@@ -32,7 +36,7 @@ class RadioButton extends StatelessWidget {
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
-            children: options.map((String option) {
+            children: widget.options.map((String option) {
               return Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -43,8 +47,8 @@ class RadioButton extends StatelessWidget {
                     focusColor: Colors.lightGreen,
                     mouseCursor: MouseCursor.defer,
                     value: option,
-                    groupValue: selectedValue,
-                    onChanged: onChanged,
+                    groupValue: widget.selectedValue,
+                    onChanged: widget.onChanged,
                   ),
                   Text(option),
                   SizedBox(width: 12),

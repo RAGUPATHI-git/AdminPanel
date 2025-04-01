@@ -6,7 +6,6 @@ import 'package:adminpanel/core/utils/device_utility.dart';
 import 'package:adminpanel/features/authentication/login/data/repositories/authentication_repository.dart';
 import 'package:adminpanel/features/authentication/login/presentation/login_screen.dart';
 import 'package:adminpanel/routes/routes.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -71,6 +70,8 @@ class Dsidebar extends StatelessWidget {
                           title: "Students",
                           // icon: ImageUrl.blueDot,
                           items: [
+                            Ritem(Routes.studentList, DIcons().student,
+                                " Students"),
                             Ritem(Routes.addStudent, DIcons().addStudent,
                                 " Add Student"),
                           ],
@@ -82,9 +83,19 @@ class Dsidebar extends StatelessWidget {
                           items: [
                             Ritem(Routes.addevent, DIcons().addEvent,
                                 " Add Event"),
-
                             Ritem(Routes.editevent, DIcons().editEvent,
                                 " Edit/Delete Event"),
+                          ],
+                          icon: '',
+                        ),
+                        Mainitem(
+                          title: "Syllabus",
+                          // icon: ImageUrl.blueDot,
+                          items: [
+                            Ritem(Routes.addSyllabus,DIcons().addSyllabus,
+                                " Add Syllabus"),
+                            Ritem(Routes.allSyllabus, DIcons().allSyllabus,
+                                " All Syllabus"),
                           ],
                           icon: '',
                         ),

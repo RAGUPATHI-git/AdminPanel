@@ -13,10 +13,15 @@ class Routes {
 
   //students
   static const String addStudent = '/add-student';
+  static const String studentList = '/student-list';
 
   //events
   static const String addevent = '/add-event';
   static const String editevent = '/edit-event';
+
+  //syllabus
+  static const String addSyllabus = '/addsyllabus';
+  static const String allSyllabus = '/allsyllabus';
 
   //test screens
   static const String test = '/test';
@@ -28,7 +33,10 @@ class Routes {
     forgorPassword,
     logout,
     dashBoard,
-    event,
+    addevent,
+    editevent,
+    addSyllabus,
+    allSyllabus,
     maintenance,
     error_404,
     addStudent,
