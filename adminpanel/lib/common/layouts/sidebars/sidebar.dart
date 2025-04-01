@@ -92,9 +92,9 @@ class Dsidebar extends StatelessWidget {
                           title: "Syllabus",
                           // icon: ImageUrl.blueDot,
                           items: [
-                            Ritem(Routes.addSyllabus,DIcons().addEvent,
+                            Ritem(Routes.addSyllabus,DIcons().addSyllabus,
                                 " Add Syllabus"),
-                            Ritem(Routes.allSyllabus, DIcons().editEvent,
+                            Ritem(Routes.allSyllabus, DIcons().allSyllabus,
                                 " All Syllabus"),
                           ],
                           icon: '',
