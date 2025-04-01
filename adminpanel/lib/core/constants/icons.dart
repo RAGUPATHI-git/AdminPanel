@@ -13,5 +13,7 @@ class DIcons {
   final String lock = '../assets/icons/lock.svg';
   final String crossedEye = '../assets/icons/crossedeye.svg';
   final String eye = '../assets/icons/eye.svg';
-  //static String search ='../assets/icons/search.svg';
+  final String search ='../assets/icons/search.svg';
+  final String addSyllabus = '../assets/icons/add-Syllabus.svg';
+  final String allSyllabus = '../assets/icons/all-Syllabus.svg';
 }

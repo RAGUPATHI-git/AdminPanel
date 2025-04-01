@@ -35,6 +35,7 @@ class BasicInput extends StatelessWidget {
       children: [
         const SizedBox(height: 8),
         TextFormField(
+          cursorColor: Colors.grey.shade400,
           controller: controller,
           keyboardType: keyboardType,
           obscureText: obscureText,
