@@ -3,7 +3,7 @@ import 'package:adminpanel/core/constants/fonts.dart';
 import 'package:adminpanel/core/constants/input%20fields/basic_input.dart';
 import 'package:adminpanel/core/constants/sizes.dart';
 import 'package:adminpanel/features/syllabus/add%20syllabus/presentation/screens/add_syllabus.dart';
-import 'package:adminpanel/features/syllabus/all%20syllabus/presentation/screens/responsive%20screens/widgets/toggleButton.dart';
+import 'package:adminpanel/features/syllabus/all%20syllabus/presentation/screens/responsive%20screens/widgets/fill_toggleButton.dart';
 import 'package:flutter/material.dart';
 
 class AllSyllabusDesktop extends StatefulWidget {
@@ -147,7 +147,7 @@ class _AllSyllabusDesktopState extends State<AllSyllabusDesktop> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            CustomToggleButton(
+                            FillToggleButton(
                               label: "          ALL   ${syllabus.length}          ",
                               onPressed: () {
                                 setState(() {
@@ -161,7 +161,7 @@ class _AllSyllabusDesktopState extends State<AllSyllabusDesktop> {
                               isSelected: selectedToggle == 'ALL',
                             ),
                             
-                            CustomToggleButton(
+                            FillToggleButton(
                               label: "            NEW   ${newSyllabus.length}           ",
                               onPressed: () {
                                 setState(() {
@@ -175,7 +175,7 @@ class _AllSyllabusDesktopState extends State<AllSyllabusDesktop> {
                               isSelected: selectedToggle == 'NEW',
                             ),
                             
-                            CustomToggleButton(
+                            FillToggleButton(
                               label: "        ARCHIVED   ${archivedSyllabus.length}        ",
                               onPressed: () {
                                 setState(() {
@@ -189,7 +189,7 @@ class _AllSyllabusDesktopState extends State<AllSyllabusDesktop> {
                               isSelected: selectedToggle == 'ARCHIVED',
                             ),
                             
-                            CustomToggleButton(
+                            FillToggleButton(
                               label: "         DELETED   ${deletedSyllabus.length}         ",
                               onPressed: () {
                                 setState(() {
@@ -207,7 +207,7 @@ class _AllSyllabusDesktopState extends State<AllSyllabusDesktop> {
                             VerticalDivider(thickness: 1,color:Colors.grey, indent: 1,endIndent: 1,), //not appearing
                             
 
-                            CustomToggleButton(
+                            FillToggleButton(
                               curve: 0,
                               length: 20,
                               width: 45,
@@ -216,7 +216,7 @@ class _AllSyllabusDesktopState extends State<AllSyllabusDesktop> {
 
                             
 
-                            CustomToggleButton(
+                            FillToggleButton(
                               curve: 0,
                               length: 20,
                               width: 45,

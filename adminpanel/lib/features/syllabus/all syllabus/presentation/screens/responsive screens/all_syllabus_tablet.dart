@@ -2,7 +2,7 @@ import 'package:adminpanel/core/constants/button_styles/elevated_buttons.dart';
 import 'package:adminpanel/core/constants/fonts.dart';
 import 'package:adminpanel/core/constants/input%20fields/basic_input.dart';
 import 'package:adminpanel/core/constants/sizes.dart';
-import 'package:adminpanel/features/syllabus/all%20syllabus/presentation/screens/responsive%20screens/widgets/toggleButton.dart';
+import 'package:adminpanel/features/syllabus/all%20syllabus/presentation/screens/responsive%20screens/widgets/fill_toggleButton.dart';
 import 'package:flutter/material.dart';
 
 class AllSyllabusTablet extends StatefulWidget {
@@ -146,7 +146,7 @@ class _AllSyllabusTabletState extends State<AllSyllabusTablet> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            CustomToggleButton(
+                            FillToggleButton(
                               label: "  ALL   ${syllabus.length}  ",
                               onPressed: () {
                                 setState(() {
@@ -160,7 +160,7 @@ class _AllSyllabusTabletState extends State<AllSyllabusTablet> {
                               isSelected: selectedToggle == 'ALL',
                             ),
                             
-                            CustomToggleButton(
+                            FillToggleButton(
                               label: "    NEW   ${newSyllabus.length}  ",
                               onPressed: () {
                                 setState(() {
@@ -174,7 +174,7 @@ class _AllSyllabusTabletState extends State<AllSyllabusTablet> {
                               isSelected: selectedToggle == 'NEW',
                             ),
                             
-                            CustomToggleButton(
+                            FillToggleButton(
                               label: " ARCHIVED   ${archivedSyllabus.length} ",
                               onPressed: () {
                                 setState(() {
@@ -188,7 +188,7 @@ class _AllSyllabusTabletState extends State<AllSyllabusTablet> {
                               isSelected: selectedToggle == 'ARCHIVED',
                             ),
                             
-                            CustomToggleButton(
+                            FillToggleButton(
                               label: " DELETED   ${deletedSyllabus.length} ",
                               onPressed: () {
                                 setState(() {
@@ -206,7 +206,7 @@ class _AllSyllabusTabletState extends State<AllSyllabusTablet> {
                             VerticalDivider(thickness: 1,color:Colors.grey, indent: 1,endIndent: 1,), //not appearing
                             
 
-                            CustomToggleButton(
+                            FillToggleButton(
                               curve: 0,
                               length: 20,
                               width: 25,
@@ -215,7 +215,7 @@ class _AllSyllabusTabletState extends State<AllSyllabusTablet> {
 
                             
 
-                            CustomToggleButton(
+                            FillToggleButton(
                               curve: 0,
                               length: 20,
                               width: 25,

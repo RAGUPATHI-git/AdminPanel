@@ -2,7 +2,7 @@ import 'package:adminpanel/core/constants/button_styles/elevated_buttons.dart';
 import 'package:adminpanel/core/constants/fonts.dart';
 import 'package:adminpanel/core/constants/input%20fields/basic_input.dart';
 import 'package:adminpanel/core/constants/sizes.dart';
-import 'package:adminpanel/features/syllabus/all%20syllabus/presentation/screens/responsive%20screens/widgets/toggleButton.dart';
+import 'package:adminpanel/features/syllabus/all%20syllabus/presentation/screens/responsive%20screens/widgets/fill_toggleButton.dart';
 import 'package:flutter/material.dart';
 
 class AllSyllabusMobile extends StatefulWidget {
@@ -146,7 +146,7 @@ class _AllSyllabusMobileState extends State<AllSyllabusMobile> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            CustomToggleButton(
+                            FillToggleButton(
                               size: 13,
                               label: "  ALL   ${syllabus.length}  ",
                               onPressed: () {
@@ -161,7 +161,7 @@ class _AllSyllabusMobileState extends State<AllSyllabusMobile> {
                               isSelected: selectedToggle == 'ALL',
                             ),
                             
-                            CustomToggleButton(
+                            FillToggleButton(
                               size: 13,
                               label: "    NEW   ${newSyllabus.length}  ",
                               onPressed: () {
@@ -176,7 +176,7 @@ class _AllSyllabusMobileState extends State<AllSyllabusMobile> {
                               isSelected: selectedToggle == 'NEW',
                             ),
                             
-                            CustomToggleButton(
+                            FillToggleButton(
                               size: 13,
                               label: " ARCHIVED   ${archivedSyllabus.length} ",
                               onPressed: () {
@@ -191,7 +191,7 @@ class _AllSyllabusMobileState extends State<AllSyllabusMobile> {
                               isSelected: selectedToggle == 'ARCHIVED',
                             ),
                             
-                            CustomToggleButton(
+                            FillToggleButton(
                               size: 13,
                               label: " DELETED   ${deletedSyllabus.length} ",
                               onPressed: () {

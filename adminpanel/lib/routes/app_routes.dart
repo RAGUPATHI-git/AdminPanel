@@ -3,6 +3,7 @@ import 'package:adminpanel/features/authentication/login/presentation/login_scre
 import 'package:adminpanel/features/dashboard/dashboard_screen.dart';
 import 'package:adminpanel/features/events/add%20events/presentation/screens/add_events_screen.dart';
 import 'package:adminpanel/features/events/edit%20events/presentation/screens/edit_events_screen.dart';
+import 'package:adminpanel/features/notes/all%20notes/presentation/screens/all_notes_screen.dart';
 import 'package:adminpanel/features/response/maintenance/presentation/maintenance_screen.dart';
 import 'package:adminpanel/features/students/add%20student/presentation/screens/add_students_screen.dart';
 import 'package:adminpanel/features/students/student%20list/presentation/screens/student_list_screen.dart';
@@ -80,6 +81,13 @@ class AppRoutes {
       middlewares: [RoutesMiddleware()],
       binding: GeneralBindings()
       ),
+    GetPage(
+      name: Routes.notes,
+      page: () => const AllNotesScreen(),
+      transitionDuration: const Duration(seconds: 0),
+      middlewares: [RoutesMiddleware()],
+      binding: GeneralBindings()
+      )
 
   ];
 }
