@@ -23,6 +23,9 @@ class Routes {
   static const String addSyllabus = '/addsyllabus';
   static const String allSyllabus = '/allsyllabus';
 
+  //notes 
+  static const String notes = '/notes';
+
   //test screens
   static const String test = '/test';
   static const String loading = '/loading';
@@ -37,6 +40,7 @@ class Routes {
     editevent,
     addSyllabus,
     allSyllabus,
+    notes,
     maintenance,
     error_404,
     addStudent,
