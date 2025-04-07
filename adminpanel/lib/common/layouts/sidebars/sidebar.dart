@@ -99,6 +99,14 @@ class Dsidebar extends StatelessWidget {
                           ],
                           icon: '',
                         ),
+                        Mainitem(
+                          title: "Notes", 
+                          icon: '',
+                          items: [
+                            Ritem(Routes.notes, 
+                            DIcons().allSyllabus,
+                            "Notes")
+                          ], )
                       ],
                     ),
                   ),

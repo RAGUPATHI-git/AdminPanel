@@ -1,7 +1,7 @@
 import 'package:adminpanel/core/constants/colors.dart';
 import 'package:flutter/material.dart';
 
-class CustomToggleButton extends StatelessWidget {
+class FillToggleButton extends StatelessWidget {
   final String label;
   final double length;
   final double width;
@@ -10,7 +10,7 @@ class CustomToggleButton extends StatelessWidget {
   final VoidCallback onPressed;
   final bool isSelected; 
 
-  const CustomToggleButton({
+  const FillToggleButton({
     Key? key,
     this.length = 15.0,
     this.width = 15.0,
