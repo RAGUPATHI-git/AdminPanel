@@ -26,6 +26,9 @@ class Routes {
   //notes 
   static const String notes = '/notes';
 
+  //profiles
+   static const String profiles = '/profiles';
+
   //test screens
   static const String test = '/test';
   static const String loading = '/loading';
@@ -41,6 +44,7 @@ class Routes {
     addSyllabus,
     allSyllabus,
     notes,
+    profiles,
     maintenance,
     error_404,
     addStudent,
