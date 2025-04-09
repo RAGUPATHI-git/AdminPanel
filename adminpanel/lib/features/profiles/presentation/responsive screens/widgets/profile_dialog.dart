@@ -1,4 +1,5 @@
 import 'package:adminpanel/core/constants/button_styles/elevated_buttons.dart';
+import 'package:adminpanel/core/constants/fonts.dart';
 import 'package:adminpanel/core/constants/input%20fields/basic_input.dart';
 import 'package:adminpanel/core/constants/input%20fields/image_picker.dart';
 import 'package:flutter/material.dart';
@@ -61,7 +62,7 @@ class _ProfileDialogState extends State<ProfileDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text("Edit Profile"),
+      title: Text("Edit Profile", style:DFont.title), 
       content: SingleChildScrollView(
         child: Column(
           children: [
@@ -90,6 +91,7 @@ class _ProfileDialogState extends State<ProfileDialog> {
         ),
       ),
       actions: [
+
         ElevatedButton(
           style: DElevatedButtons.successelevatedButton,
           onPressed: () {
