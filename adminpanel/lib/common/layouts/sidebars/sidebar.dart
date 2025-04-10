@@ -67,6 +67,15 @@ class Dsidebar extends StatelessWidget {
                           height: 10,
                         ),
                         Mainitem(
+                          title: "Profiles", 
+                          icon: '',
+                          items: [
+                            Ritem(Routes.profiles, 
+                            DIcons().allSyllabus,    //temporary
+                            "Profiles")
+                          ],
+                        ),
+                        Mainitem(
                           title: "Students",
                           // icon: ImageUrl.blueDot,
                           items: [
@@ -104,7 +113,7 @@ class Dsidebar extends StatelessWidget {
                           icon: '',
                           items: [
                             Ritem(Routes.notes, 
-                            DIcons().allSyllabus,
+                            DIcons().allSyllabus,  //temporary
                             "Notes")
                           ], )
                       ],
